@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Software Shenanigans - Contact us</title>
+
+    <meta name="description" content="Contact Software Shenanigans!" />
+
+    <meta name="keywords" content="wed design, web development, software development, bots, scraping" />
+    <meta name="robots" content="all" />
+
+    <link rel="canonical" href="https://softwareshenanigans.com/contact" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navigation">
+    <div class="navigation__links-left">
+        <a class="navigation__brand active"
+           title="Home page link"
+           href="./"
+           target="_self">
+            <img  class="navigation__brand__title" src="img/SS_home_icon.png" alt="HOME">
+        </a>
+    </div>
+    <div class="navigation__floater">
+        <div class="navigation__floater__links-container" id="hidden-links-container">
+            <div class="navigation__floater__links-container__cover">
+                <img class="navigation__floater__links-container__cover__image"
+                     src="img/SS_menu_icon.png"
+                     alt="MENU">
+            </div>
+            <ul>
+                <li>
+                    <a class="navigation__floater__links-container__link"
+                       title="Projects page link"
+                       href="./projects"
+                       target="_self">
+                        Projects<i class="far fa-folder-open"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="navigation__floater__links-container__link"
+                       title="About us page link"
+                       href="./about"
+                       target="_self">
+                        About us<i class="far fa-address-card"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="navigation__floater__links-container__link"
+                       title="Contact us page link"
+                       href="./contact"
+                       target="_self">
+                        Contact us<i class="far fa-envelope"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="navigation__floater__links-container__link"
+                       title="GitHub external link"
+                       href="https://github.com/SoftwareShenanigans"
+                       target="_blank">
+                        GitHub <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="page">
+    <h1 class="page__title">
+        <a href="./contact">
+            <img src="img/SS_contact_title.png" alt="CONTACT US" />
+        </a>
+    </h1>
+
+    <div class="container">
+        <div class="sidebar">
+            <button class="social-icon facebook" type="button">
+                <span><i class="fab fa-facebook-f fa-2x"></i></span>
+            </button>
+            <button class="social-icon linkedin" type="button">
+                <span><i class="fab fa-linkedin-in fa-2x"></i></span>
+            </button>
+            <button class="social-icon github" type="button">
+                <span><i class="fab fa-github fa-2x"></i></span>
+            </button>
+        </div>
+
+        <form action="/contact-submit"
+              enctype="application/x-www-form-urlencoded"
+              class="contact-form"
+              id="contact-form"
+              method="POST">
+
+        <fieldset class="email-step active" id="step-email-details">
+                <div class="email-step__title">
+                    <h2>
+                        <span>Send us</span> an email with the form below!
+                    </h2>
+                    <p>
+                        You won't need to sign in to send a message.
+                    </p>
+                    <p>
+                        Your information will only be used to contact you regarding your inquiry.
+                    </p>
+                </div>
+                <div>
+                    <label for="first-name">
+                        First name:
+                    </label>
+                    <input type="text"
+                           id="first-name"
+                           name="first_name"
+                           placeholder="First name"
+                           required />
+                </div>
+                <div>
+                    <label for="last-name">
+                        Last name:
+                    </label>
+                    <input type="text"
+                           id="last-name"
+                           name="last_name"
+                           placeholder="Last name"
+                           required />
+                </div>
+                <div>
+                    <label for="email-address">
+                        Contact email:
+                    </label>
+                    <input type="email"
+                           id="email-address"
+                           name="email_address"
+                           placeholder="Email address"
+                           required />
+                </div>
+                <div>
+                    <label for="company-name">
+                        Company (optional):
+                    </label>
+                    <input type="text"
+                           id="company-name"
+                           name="company_name"
+                           placeholder="Company (optional)">
+                </div>
+            </fieldset>
+
+            <!-- Currently scrapped second step
+
+            <fieldset class="email-step" id="step-email-title">
+                <div class="email-step__title">
+                    <h2>
+                        <span>Select</span> a subject for you email.
+                    </h2>
+                    <p>
+                        If multiple apply, pick the most relevant.
+                    </p>
+                </div>
+                <label>
+                    <input type="radio"
+                           name="type-selectors"
+                           id="title-website"
+                           value="website" checked />
+                    <span class="checkmark"><i class="fas fa-lg"></i></span>
+                    <img src="img/SS_contact_icon_fullwebsite.png" alt="IMAGE" />
+                </label>
+                <label>
+                    <input type="radio"
+                           name="type-selectors"
+                           id="title-website-nodesign"
+                           value="website-nodesign"/>
+                    <span class="checkmark"><i class="fas fa-lg"></i></span>
+                    <img src="img/SS_contact_icon_nodesignwebsite.png" alt="IMAGE" />
+                </label>
+            </fieldset>
+
+            -->
+
+            <fieldset class="email-step" id="step-email-body">
+                <div class="email-step__title">
+                    <h2>
+                        <span>Write</span> your message.
+                    </h2>
+                    <p>
+                        HTML code is allowed for formatting.
+                    </p>
+                </div>
+                <label>
+                    <textarea id="email-body"
+                              name="email_body"
+                              placeholder="Your message..."
+                              tabindex="-1"
+                              required></textarea>
+                </label>
+            </fieldset>
+
+            <div class="contact-form__controls">
+                <div class="contact-form__controls__progress">
+                    <div class="contact-form__controls__progress__bar">
+                        <span class="contact-form__controls__progress__bar__content progress-50" id="progress-content"></span>
+                    </div>
+                </div>
+                <div class="contact-form__controls__buttons">
+                    <button type="button"
+                            id="form-previous"
+                            disabled>
+                        Previous
+                    </button>
+                    <button type="button"
+                            id="form-next">
+                        Next step
+                    </button>
+                    <input type="submit"
+                           class="hide"
+                           id="form-send"
+                           value="Send my message!" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- SCRIPTS -->
+<script type="text/javascript" src="js/navigation.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
+
+</body>
+</html>

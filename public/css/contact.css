@@ -1,0 +1,336 @@
+/* SUPER GLOBALS */
+/* VARIABLES */
+/* MIXINS */
+/* ELEMENTS */
+/* CLASSES */
+.hide {
+  display: none !important; }
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 73px;
+  max-height: 100%;
+  width: 100%;
+  overflow: auto; }
+  .page__title {
+    display: flex;
+    align-items: center;
+    max-height: 80px;
+    margin: 70px auto 80px;
+    flex: 2; }
+    .page__title a {
+      display: flex;
+      align-self: end;
+      justify-content: center;
+      width: 100%;
+      flex-shrink: 1; }
+      .page__title a img {
+        position: relative;
+        left: 40px;
+        max-height: 80px;
+        max-width: 75%; }
+  .page .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 40px 0 120px;
+    flex: 3; }
+    .page .container .sidebar {
+      position: absolute;
+      top: 15%;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 80px;
+      padding: 15px 0;
+      background: #262626;
+      border-radius: 0 20px 20px 0; }
+      .page .container .sidebar .social-icon {
+        position: relative;
+        left: 45%;
+        height: 50px;
+        width: 50px;
+        margin: 10px 0;
+        transform: translateX(-50%);
+        background: rgba(204, 204, 204, 0.5);
+        border-radius: 8px;
+        transition: 0.5s; }
+        .page .container .sidebar .social-icon:hover > span {
+          transition: 0.1s;
+          bottom: 4px; }
+        .page .container .sidebar .social-icon > span {
+          position: absolute;
+          bottom: 7px;
+          left: 0;
+          display: block;
+          height: 46px;
+          width: 46px;
+          border: 2px solid white;
+          border-radius: 8px;
+          overflow: hidden; }
+          .page .container .sidebar .social-icon > span i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            transform: translate(-50%, -50%);
+            line-height: 46px; }
+        .page .container .sidebar .social-icon.facebook span {
+          color: white;
+          background: #132dae; }
+        .page .container .sidebar .social-icon.facebook:hover span {
+          background: #1839dc; }
+        .page .container .sidebar .social-icon.linkedin span {
+          color: white;
+          background: #014bb2; }
+        .page .container .sidebar .social-icon.linkedin:hover span {
+          background: #0173e4; }
+        .page .container .sidebar .social-icon.github span {
+          color: black;
+          background: white; }
+        .page .container .sidebar .social-icon.github:hover span {
+          background: rgba(255, 255, 255, 0.8); }
+    .page .container .contact-form {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+      width: 100%;
+      max-width: 800px;
+      margin: 40px 0;
+      border: 2px solid white;
+      border-radius: 3px;
+      overflow: hidden;
+      transition: 0.5s;
+      flex-shrink: 1;
+      /* Form controls */ }
+      .page .container .contact-form fieldset {
+        overflow: hidden; }
+      .page .container .contact-form__controls {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 90%;
+        padding-bottom: 15px;
+        background: black;
+        transform: translateX(-50%);
+        /* Progress bar container */
+        /* Button container */ }
+        .page .container .contact-form__controls__progress {
+          display: flex;
+          align-items: center;
+          margin-right: 25px;
+          flex: 1; }
+          .page .container .contact-form__controls__progress__bar {
+            position: relative;
+            height: 28px;
+            background: black;
+            border: 2px solid #e60000;
+            border-radius: 18px;
+            overflow: hidden;
+            flex: 1; }
+            .page .container .contact-form__controls__progress__bar:before, .page .container .contact-form__controls__progress__bar:after, .page .container .contact-form__controls__progress__bar__content {
+              position: absolute;
+              display: block;
+              height: 38px;
+              margin-top: -7px;
+              border-radius: 35px; }
+            .page .container .contact-form__controls__progress__bar:before {
+              left: -2px;
+              width: 50%;
+              border-right: 5px solid red;
+              border-radius: 20px;
+              content: "";
+              z-index: 2; }
+            .page .container .contact-form__controls__progress__bar__content {
+              transition: 0.4s;
+              width: 100%;
+              z-index: 3; }
+              .page .container .contact-form__controls__progress__bar__content.progress-33 {
+                max-width: 33%;
+                background-image: linear-gradient(45deg, #b30000 9.7%, white 9.7%, white 19.4%, #b30000 19.4%, #b30000 29.1%, white 29.1%, white 38.8%, #b30000 38.8%, #b30000 48.5%, white 48.5%, white 58.2%, #b30000 58.2%, #b30000 67.9%, white 67.9%, white 77.6%, #b30000 77.6%, #b30000 87.3%, white 87.3%); }
+              .page .container .contact-form__controls__progress__bar__content.progress-50 {
+                max-width: 50%;
+                background-image: linear-gradient(45deg, #b30000 9.7%, white 9.7%, white 19.4%, #b30000 19.4%, #b30000 29.1%, white 29.1%, white 38.8%, #b30000 38.8%, #b30000 48.5%, white 48.5%, white 58.2%, #b30000 58.2%, #b30000 67.9%, white 67.9%, white 77.6%, #b30000 77.6%, #b30000 87.3%, white 87.3%); }
+              .page .container .contact-form__controls__progress__bar__content.progress-66 {
+                max-width: 66%;
+                background-image: linear-gradient(45deg, #b30000 9.7%, white 9.7%, white 19.4%, #b30000 19.4%, #b30000 29.1%, white 29.1%, white 38.8%, #b30000 38.8%, #b30000 48.5%, white 48.5%, white 58.2%, #b30000 58.2%, #b30000 67.9%, white 67.9%, white 77.6%, #b30000 77.6%, #b30000 87.3%, white 87.3%); }
+              .page .container .contact-form__controls__progress__bar__content.progress-100 {
+                max-width: 100%;
+                background-image: linear-gradient(45deg, #b30000 6.9285714286%, white 6.9285714286%, white 13.8571428571%, #b30000 13.8571428571%, #b30000 20.7857142857%, white 20.7857142857%, white 27.7142857143%, #b30000 27.7142857143%, #b30000 34.6428571429%, white 34.6428571429%, white 41.5714285714%, #b30000 41.5714285714%, #b30000 48.5%, white 48.5%, white 55.4285714286%, #b30000 55.4285714286%, #b30000 62.3571428571%, white 62.3571428571%, white 69.2857142857%, #b30000 69.2857142857%, #b30000 76.2142857143%, white 76.2142857143%, white 83.1428571429%, #b30000 83.1428571429%, #b30000 90.0714285714%, white 90.0714285714%); }
+        .page .container .contact-form__controls__buttons {
+          margin-left: auto; }
+          .page .container .contact-form__controls__buttons button, .page .container .contact-form__controls__buttons input {
+            font-size: 15px;
+            color: red;
+            background: black;
+            border: 2px solid white;
+            border-radius: 5px;
+            padding: 8px 13px; }
+            .page .container .contact-form__controls__buttons button:disabled, .page .container .contact-form__controls__buttons input:disabled {
+              color: red;
+              background: rgba(0, 0, 0, 0.6);
+              border: 2px solid rgba(230, 0, 0, 0.4);
+              cursor: not-allowed; }
+            .page .container .contact-form__controls__buttons button:not(:disabled):hover, .page .container .contact-form__controls__buttons input:not(:disabled):hover {
+              color: white;
+              background: rgba(230, 0, 0, 0.9); }
+      .page .container .contact-form .email-step {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        background: black;
+        padding: 20px 40px; }
+        .page .container .contact-form .email-step:not(.active) {
+          z-index: -1; }
+        .page .container .contact-form .email-step__title {
+          position: relative;
+          top: 0;
+          left: 50%;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          color: white;
+          font-size: 16px;
+          transform: translateX(-50%);
+          text-align: center;
+          padding: 0 15px;
+          margin: 5px 0 15px; }
+          @media screen and (max-height: 800px) {
+            .page .container .contact-form .email-step__title {
+              font-size: 14px;
+              /* Hide sign in text */ }
+              .page .container .contact-form .email-step__title p {
+                display: none; } }
+          .page .container .contact-form .email-step__title h2 {
+            font-size: 24px; }
+            @media screen and (max-height: 800px) {
+              .page .container .contact-form .email-step__title h2 {
+                font-size: 20px; } }
+            .page .container .contact-form .email-step__title h2 span {
+              color: red; }
+          .page .container .contact-form .email-step__title p {
+            margin: 5px 0; }
+      .page .container .contact-form #step-email-details > div {
+        position: relative;
+        display: flex;
+        margin: 12px 0; }
+        .page .container .contact-form #step-email-details > div:not(.email-step__title):before {
+          position: absolute;
+          display: flex;
+          top: 50%;
+          right: 250px;
+          border: 3px solid white;
+          background: black;
+          border-radius: 3px;
+          content: ""; }
+          .page .container .contact-form #step-email-details > div:not(.email-step__title):before#first-name-error {
+            content: "Empty name was given!"; }
+        .page .container .contact-form #step-email-details > div > label {
+          height: 40px;
+          line-height: 40px;
+          color: white;
+          font-size: 18px; }
+        .page .container .contact-form #step-email-details > div > input {
+          margin-left: auto;
+          border: none;
+          color: white;
+          background: rgba(26, 26, 26, 0.4);
+          border-bottom: 2px solid red;
+          border-radius: 15px 15px 2px 2px;
+          text-align: center;
+          padding: 5px 10px 8px; }
+      .page .container .contact-form #step-email-title {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap; }
+        .page .container .contact-form #step-email-title > label {
+          position: relative;
+          display: flex;
+          height: 180px;
+          width: 180px;
+          color: black;
+          background: rgba(255, 255, 255, 0.85);
+          border: 1px solid red;
+          border-radius: 12px;
+          margin: 10px;
+          overflow: hidden; }
+          .page .container .contact-form #step-email-title > label > img {
+            height: auto;
+            max-width: 100%; }
+          .page .container .contact-form #step-email-title > label > input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0; }
+            .page .container .contact-form #step-email-title > label > input:checked ~ .checkmark {
+              background: #09aa09; }
+              .page .container .contact-form #step-email-title > label > input:checked ~ .checkmark > i {
+                top: 48%;
+                left: 48%; }
+                .page .container .contact-form #step-email-title > label > input:checked ~ .checkmark > i:before {
+                  content: "\f00c";
+                  color: white;
+                  -webkit-transform: rotate(-12deg);
+                  -ms-transform: rotate(-12deg);
+                  transform: rotate(-12deg); }
+          .page .container .contact-form #step-email-title > label > .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 35px;
+            width: 35px;
+            background: white;
+            border-radius: 0 0 50% 0; }
+            .page .container .contact-form #step-email-title > label > .checkmark > i {
+              position: absolute;
+              content: "";
+              left: 46%;
+              top: 50%;
+              margin: 0;
+              color: red;
+              transform: translate(-50%, -50%); }
+              .page .container .contact-form #step-email-title > label > .checkmark > i:before {
+                display: block;
+                content: "\f00d"; }
+            .page .container .contact-form #step-email-title > label > .checkmark:hover {
+              background: #d9d9d9; }
+      .page .container .contact-form #step-email-body > label {
+        display: flex;
+        margin-top: 10px;
+        overflow: hidden; }
+        .page .container .contact-form #step-email-body > label > textarea {
+          min-height: 200px;
+          padding: 25px;
+          border-radius: 20px;
+          border: none;
+          resize: none;
+          font-size: 18px;
+          flex: 1; }
+
+/* KEYFRAMES */
+@keyframes HideStep {
+  0% {
+    left: 0; }
+  100% {
+    left: -1000px; } }
+@keyframes ShowStep {
+  0% {
+    left: -1000px; }
+  100% {
+    left: 0; } }
+
+/*# sourceMappingURL=contact.css.map */

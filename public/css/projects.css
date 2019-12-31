@@ -1,0 +1,231 @@
+/* SUPER GLOBALS */
+/* VARIABLES */
+/* STROKE TEXT */
+/* COMPONENTS */
+.page {
+  height: 100%;
+  padding: 73px 0 0;
+  box-sizing: border-box;
+  background: black; }
+  .page__projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: inherit;
+    overflow: auto; }
+    .page__projects-container__title {
+      max-width: 650px;
+      padding-bottom: 5px;
+      margin: 70px 45px 120px;
+      text-align: center;
+      flex: 1 0 100%; }
+      @media screen and (max-width: 600px) {
+        .page__projects-container__title {
+          margin: 70px 30px 50px; } }
+      @media screen and (max-width: 500px) {
+        .page__projects-container__title {
+          margin: 70px 30px 20px; } }
+      .page__projects-container__title img {
+        height: auto;
+        max-width: 80%; }
+    .page__projects-container__projects {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 50px;
+      overflow: visible;
+      background: black; }
+      @media screen and (max-width: 700px) {
+        .page__projects-container__projects {
+          padding: 0 30px; } }
+      @media screen and (max-width: 600px) {
+        .page__projects-container__projects {
+          padding: 0 15px; } }
+      @media screen and (max-width: 500px) {
+        .page__projects-container__projects {
+          padding: 10px; } }
+
+.project {
+  max-width: 780px;
+  margin: 0 50px 200px; }
+  @media screen and (max-width: 700px) {
+    .project {
+      margin: 0 5px 120px; } }
+  .project:last-child {
+    margin-bottom: 80px; }
+  .project__image-container {
+    max-height: 700px;
+    border: 3px solid white;
+    border-radius: 5px;
+    overflow: hidden; }
+    .project__image-container__title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 60px;
+      padding: 8px;
+      background: red;
+      border-bottom: 5px solid white; }
+      .project__image-container__title img {
+        position: relative;
+        height: 100%;
+        max-height: 30px; }
+      .project__image-container__title img.cachemaps {
+        top: 4px; }
+      .project__image-container__title img.newsbot {
+        max-height: 25px; }
+    .project__image-container__image {
+      position: relative;
+      max-height: calc(700px - 70px);
+      max-width: inherit; }
+      .project__image-container__image a {
+        display: block;
+        height: auto;
+        max-width: 100%; }
+      .project__image-container__image img {
+        height: auto;
+        max-width: 100%; }
+      .project__image-container__image__shader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.25); }
+  .project__details {
+    margin-top: 45px; }
+    @media screen and (max-width: 600px) {
+      .project__details {
+        margin-top: 15px; } }
+    @media screen and (max-width: 500px) {
+      .project__details {
+        margin-top: 5px; } }
+    .project__details__toggle {
+      display: inline-block;
+      position: relative;
+      top: 24px;
+      color: white;
+      background: black;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+      .project__details__toggle span {
+        font-size: 22px;
+        text-decoration: underline;
+        position: relative;
+        top: -14px; }
+      .project__details__toggle i {
+        transition: 0.4s; }
+      .project__details__toggle.open i {
+        transform: rotate(90deg); }
+      .project__details__toggle:hover span, .project__details__toggle:hover i {
+        color: #e60000; }
+    .project__details__container {
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+      scroll-behavior: smooth;
+      max-height: 0;
+      color: white;
+      border: 2px solid #e60000;
+      overflow: hidden; }
+      .project__details__container.open {
+        max-height: 2000px; }
+      .project__details__container__content {
+        color: white;
+        overflow: hidden; }
+        .project__details__container__content__technologies {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 30px; }
+          .project__details__container__content__technologies__title {
+            max-width: 260px;
+            text-align: center;
+            font-size: 28px;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid red; }
+            .project__details__container__content__technologies__title > h3 {
+              max-height: 30px; }
+            .project__details__container__content__technologies__title span:first-child {
+              color: white; }
+            .project__details__container__content__technologies__title span:nth-child(2) {
+              color: red;
+              font-weight: bolder; }
+          .project__details__container__content__technologies__content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; }
+            .project__details__container__content__technologies__content * {
+              height: 26px;
+              line-height: 26px;
+              font-size: 20px;
+              padding: 4px 13px;
+              margin: 10px 4px 0;
+              border-radius: 4px; }
+            .project__details__container__content__technologies__content span.javascript {
+              color: black;
+              background: #fcdf4a;
+              font-weight: bolder; }
+            .project__details__container__content__technologies__content span.php {
+              text-shadow: -2px -1px 0 white, -2px 0px 0 white, -2px 1px 0 white, -1px -2px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white, -1px 2px 0 white, 0px -2px 0 white, 0px -1px 0 white, 0px 0px 0 white, 0px 1px 0 white, 0px 2px 0 white, 1px -2px 0 white, 1px -1px 0 white, 1px 0px 0 white, 1px 1px 0 white, 1px 2px 0 white, 2px -1px 0 white, 2px 0px 0 white, 2px 1px 0 white;
+              color: black;
+              background: #767ab2;
+              font-size: 24px;
+              letter-spacing: 2px;
+              font-weight: bolder; }
+            .project__details__container__content__technologies__content span.mysql {
+              color: #ef8f2e;
+              background: #006185;
+              font-weight: bolder;
+              font-size: 20px; }
+            .project__details__container__content__technologies__content span.nodejs {
+              color: #1a1a1a;
+              background: #5aad58;
+              font-weight: bolder; }
+            .project__details__container__content__technologies__content span.d3js {
+              color: white;
+              background: linear-gradient(to right, #f99c3e, #c86051);
+              font-weight: bolder; }
+            .project__details__container__content__technologies__content span.cheeriojs {
+              color: white;
+              background: linear-gradient(to right, #155d93, #15935f); }
+            .project__details__container__content__technologies__content span.node-cron {
+              color: white;
+              background: #f21c20; }
+            .project__details__container__content__technologies__content span.jquery {
+              color: #fcdf4a;
+              background: #006ba8;
+              font-weight: bolder;
+              font-size: 20px; }
+        .project__details__container__content__description {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          font-size: 18px;
+          color: white;
+          background: black;
+          padding: 30px;
+          margin-top: 25px; }
+          .project__details__container__content__description:before {
+            position: absolute;
+            align-self: center;
+            top: 0;
+            content: "";
+            width: 80%;
+            /* or 100px */
+            border-bottom: 3px solid red;
+            margin-bottom: 10px; }
+          .project__details__container__content__description span {
+            color: #e60000;
+            font-weight: 600; }
+          .project__details__container__content__description p a {
+            color: #e60000; }
+          .project__details__container__content__description p:last-child {
+            margin-top: 20px; }
+
+/*# sourceMappingURL=projects.css.map */

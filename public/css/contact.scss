@@ -1,0 +1,562 @@
+/* SUPER GLOBALS */
+@import 'globals';
+
+/* VARIABLES */
+
+$sidebar_background: hsla(220,0%,15%,1);
+
+$social_icon_border: $colors_white;
+$social_icon_shadow: hsla(0,0%,80%,0.5);
+
+$social_icon_facebook_color: $colors_white;
+$social_icon_facebook_background: hsla(230,80%,38%,1);
+$social_icon_facebook_background_hover: hsla(230,80%,48%,1);
+
+$social_icon_linkedin_color: $colors_white;
+$social_icon_linkedin_background: hsla(215,99%,35%,1);
+$social_icon_linkedin_background_hover: hsla(210,99%,45%,1);
+
+$social_icon_github_color: $colors_black;
+$social_icon_github_background: $colors_white;
+$social_icon_github_background_hover: hsla(0,0%,100%,0.8);
+
+
+$form_title_color: $colors_white;
+$form_title_fontsize: 24px;
+$form_title_fontsize_tablet: 20px;
+$form_title_description_fontsize: 16px;
+$form_title_description_fontsize_tablet: 14px;
+
+$form_button_fontsize: 15px;
+$form_button_color: $colors_red_light;
+$form_button_background: $colors_black;
+$form_button_border: $colors_white;
+
+$form_button_hover_color: hsla(0,0%,100%,1);
+$form_button_hover_background: hsla(0,100%,45%,0.9);
+
+$form_button_disabled_color: $colors_red_light;
+$form_button_disabled_background: hsla(0,0%,0%,0.6);
+$form_button_disabled_border: hsla(0,100%,45%,0.4);
+
+$form_label_color: $colors_white;
+$form_label_fontsize: 18px;
+
+$form_input_color: $colors_white;
+$form_input_background: hsla(0,0%,10%,0.4);
+$form_input_border: $colors_red_light;
+
+$progress_bar_background: $colors_black;
+$progress_bar_border: $colors_red;
+$progress_bar_content_background: hsla(0,0%,100%,1);
+$progress_bar_content_stripe_background: hsla(0,100%,35%,1);
+
+$progress_bar_text_fontsize: 26px;
+$progress_bar_text_color: $colors_white;
+
+
+$form_type_label_color: $colors_black;
+$form_type_label_background: hsla(0,0%,100%,0.85);
+$form_type_label_border: $colors_red_light;
+
+$form_type_checkmark_color: $colors_red_light;
+$form_type_checkmark_color_checked: $colors_white;
+$form_type_checkmark_background: $colors_white;
+$form_type_checkmark_background_hover: hsla(0,0%,85%,1);
+$form_type_checkmark_background_checked: hsla(120,90%,35%,1);
+
+$form_body_fontsize: 18px;
+
+/* MIXINS */
+
+@mixin striped-bg ($stripe-color: rgb(255, 0, 0),  $stripes-num: 4, $direction: 45deg) {
+  $transparent: $progress_bar_content_stripe_background;
+
+  $stripes-num: $stripes-num * 2;
+  $stripe-width: 97% / $stripes-num;
+  $gradient: ();
+
+  @for $i from 1 through ($stripes-num - 1) {
+    $item: $stripe-color;
+    $dump: ();
+
+    @if $i % 2  == 0 {
+      $dump: $item $stripe-width * ($i), $transparent $stripe-width * $i;
+    } @else {
+      $dump: $transparent $stripe-width * $i, $item $stripe-width * ($i);
+    }
+    $gradient: join($gradient, $dump, comma);
+  }
+  background-image: linear-gradient($direction, $gradient);
+}
+
+/* ELEMENTS */
+
+/* CLASSES */
+
+.hide {
+  display: none !important;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 73px;
+  max-height: 100%;
+  width: 100%;
+  overflow: auto;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    max-height: 80px;
+    margin: 70px auto 80px;
+    flex: 2;
+
+    & a {
+      display: flex;
+      align-self: end;
+      justify-content: center;
+      width: 100%;
+      flex-shrink: 1;
+
+      & img {
+        position: relative;
+        left: 40px;
+        max-height: 80px;
+        max-width: 75%;
+      }
+    }
+  }
+
+  & .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 40px 0 120px;
+    flex: 3;
+
+    & .sidebar {
+      position: absolute;
+      top: 15%;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 80px;
+      padding: 15px 0;
+      background: $sidebar_background;
+      border-radius: 0 20px 20px 0;
+
+      & .social-icon {
+        position: relative;
+        left: 45%;
+        height: 50px;
+        width: 50px;
+        margin: 10px 0;
+        transform: translateX(-50%);
+        background: $social_icon_shadow;
+        border-radius: 8px;
+        transition: 0.5s;
+
+        &:hover > span {
+          transition: 0.1s;
+          bottom: 4px;
+        }
+
+        & > span {
+          position: absolute;
+          bottom: 7px;
+          left: 0;
+          display: block;
+          height: 46px;
+          width: 46px;
+          border: 2px solid $social_icon_border;
+          border-radius: 8px;
+          overflow: hidden;
+
+          & i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            transform: translate(-50%,-50%);
+            line-height: 46px;
+          }
+        }
+
+        &.facebook {
+          span {
+            color: $social_icon_facebook_color;
+            background: $social_icon_facebook_background;
+          }
+
+          &:hover span {
+            background: $social_icon_facebook_background_hover;
+          }
+        }
+
+        &.linkedin {
+          span {
+            color: $social_icon_linkedin_color;
+            background: $social_icon_linkedin_background;
+          }
+
+          &:hover span {
+            background: $social_icon_linkedin_background_hover;
+          }
+        }
+
+        &.github{
+          span {
+            color: $social_icon_github_color;
+            background: $social_icon_github_background;
+          }
+
+          &:hover span {
+            background: $social_icon_github_background_hover;
+          }
+        }
+      }
+    }
+
+    & .contact-form {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+      width: 100%;
+      max-width: 800px;
+      margin: 40px 0;
+      border: 2px solid $colors_white;
+      border-radius: 3px;
+      overflow: hidden;
+      transition: 0.5s;
+      flex-shrink: 1;
+
+      & fieldset {
+        overflow: hidden;
+      }
+
+      /* Form controls */
+      &__controls {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 90%;
+        padding-bottom: 15px;
+        background: $colors_black;
+        transform: translateX(-50%);
+
+        /* Progress bar container */
+        &__progress {
+          display: flex;
+          align-items: center;
+          margin-right: 25px;
+          flex: 1;
+
+          &__bar {
+            position: relative;
+            height: 28px;
+            background: $progress_bar_background;
+            border: 2px solid $progress_bar_border;
+            border-radius: 18px;
+            overflow: hidden;
+            flex: 1;
+
+            &:before,
+            &:after,
+            &__content {
+              position: absolute;
+              display: block;
+              height: 38px;
+              margin-top: -7px;
+              border-radius: 35px;
+            }
+
+            &:before {
+              left: -2px;
+              width: 50%;
+              border-right: 5px solid $colors_red_light;
+              border-radius: 20px;
+              content: "";
+              z-index: 2;
+            }
+
+            &__content {
+              transition: 0.4s;
+              width: 100%;
+              z-index: 3;
+
+              &.progress-33 {
+                max-width: 33%;
+                @include striped-bg($progress_bar_content_background, 5, 45deg);
+              }
+
+              &.progress-50 {
+                max-width: 50%;
+                @include striped-bg($progress_bar_content_background, 5, 45deg);
+              }
+
+              &.progress-66 {
+                max-width: 66%;
+                @include striped-bg($progress_bar_content_background, 5, 45deg);
+              }
+
+              &.progress-100 {
+                max-width: 100%;
+                @include striped-bg($progress_bar_content_background, 7, 45deg);
+              }
+            }
+          }
+        }
+
+        /* Button container */
+        &__buttons {
+          margin-left: auto;
+
+          & button,
+          & input {
+            font-size: $form_button_fontsize;
+            color: $form_button_color;
+            background: $form_button_background;
+            border: 2px solid $form_button_border;
+            border-radius: 5px;
+            padding: 8px 13px;
+
+            &:disabled {
+              color: $form_button_disabled_color;
+              background: $form_button_disabled_background;
+              border: 2px solid $form_button_disabled_border;
+              cursor: not-allowed;
+            }
+
+            &:not(:disabled):hover {
+              color: $form_button_hover_color;
+              background: $form_button_hover_background;
+            }
+          }
+        }
+      }
+
+      .email-step {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        background: $colors_black;
+        padding: 20px 40px;
+
+        &:not(.active) {
+          z-index: -1;
+        }
+
+        &__title {
+          position: relative;
+          top: 0;
+          left: 50%;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          color: $form_title_color;
+          font-size: $form_title_description_fontsize;
+          transform: translateX(-50%);
+          text-align: center;
+          padding: 0 15px;
+          margin: 5px 0 15px;
+
+          @media screen and (max-height: 800px) {
+            font-size: $form_title_description_fontsize_tablet;
+
+            /* Hide sign in text */
+            & p {
+              display: none;
+            }
+          }
+
+          & h2 {
+            font-size: $form_title_fontsize;
+
+            @media screen and (max-height: 800px) {
+              font-size: $form_title_fontsize_tablet;
+            }
+
+            & span {
+              color: $colors_red_light;
+            }
+          }
+
+          & p {
+            margin: 5px 0;
+          }
+        }
+      }
+
+      #step-email-details {
+
+        & > div {
+          position: relative;
+          display: flex;
+          margin: 12px 0;
+
+          &:not(.email-step__title):before {
+            position: absolute;
+            display: flex;
+            top: 50%;
+            right: 250px;
+            border: 3px solid white;
+            background: black;
+            border-radius: 3px;
+            content: "";
+
+            &#first-name-error {
+              content: "Empty name was given!";
+            }
+          }
+
+          & > label {
+            height: 40px;
+            line-height: 40px;
+            color: $form_label_color;
+            font-size: $form_label_fontsize;
+          }
+
+          & > input {
+            margin-left: auto;
+            border: none;
+            color: $form_input_color;
+            background: $form_input_background;
+            border-bottom: 2px solid $form_input_border;
+            border-radius: 15px 15px 2px 2px;
+            text-align: center;
+            padding: 5px 10px 8px;
+          }
+        }
+      }
+
+      #step-email-title {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+
+        & > label {
+          position: relative;
+          display: flex;
+          height: 180px;
+          width: 180px;
+          color: $form_type_label_color;
+          background: $form_type_label_background;
+          border: 1px solid $form_type_label_border;
+          border-radius: 12px;
+          margin: 10px;
+          overflow: hidden;
+
+          & > img {
+            height: auto;
+            max-width: 100%;
+          }
+
+          & > input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+
+            &:checked ~ .checkmark {
+              background: $form_type_checkmark_background_checked;
+
+              & > i {
+                top: 48%;
+                left: 48%;
+
+                &:before {
+                  content: "\f00c";
+                  color: $form_type_checkmark_color_checked;
+                  -webkit-transform: rotate(-12deg);
+                  -ms-transform: rotate(-12deg);
+                  transform: rotate(-12deg);
+                }
+              }
+            }
+          }
+
+          & > .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 35px;
+            width: 35px;
+            background: $form_type_checkmark_background;
+            border-radius: 0 0 50% 0;
+
+            & > i {
+              position: absolute;
+              content: "";
+              left: 46%;
+              top: 50%;
+              margin: 0;
+              color: $form_type_checkmark_color;
+              transform: translate(-50%, -50%);
+
+              &:before {
+                display: block;
+                content: "\f00d";
+              }
+            }
+
+            &:hover {
+              background: $form_type_checkmark_background_hover;
+            }
+          }
+        }
+      }
+      #step-email-body {
+
+        & > label {
+          display: flex;
+          margin-top: 10px;
+          overflow: hidden;
+
+          & > textarea {
+            min-height: 200px;
+            padding: 25px;
+            border-radius: 20px;
+            border: none;
+            resize: none;
+            font-size: $form_body_fontsize;
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* KEYFRAMES */
+
+@keyframes HideStep {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -1000px;
+  }
+}
+@keyframes ShowStep {
+  0% {
+    left: -1000px;
+  }
+  100% {
+    left: 0;
+  }
+}

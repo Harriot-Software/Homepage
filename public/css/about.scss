@@ -1,0 +1,235 @@
+/* SUPER GLOBALS */
+@import 'globals';
+
+/* VARIABLES */
+
+$background_image: "../img/BACKGROUNDTEMP.jpg";
+
+$container_color: $colors_white;
+$container_color_highlight: $colors_red_light;
+$container_background: $colors_black;
+
+$underline_color: $colors_red_light;
+
+$section_title_fontsize: 50px;
+$section_title_fontsize_mobile: 42px;
+$section_content_fontsize: 20px;
+$section_content_fontsize_mobile: 20px;
+
+$page_next_link_color: $colors_red_light;
+$page_next_link_color_hover: $colors_white;
+
+/* ELEMENTS */
+
+a {
+  text-decoration: underline $colors_red_light;
+}
+
+/* CLASSES */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &:not(.extender) {
+    padding-top: 73px;
+    background: url($background_image) top center no-repeat;
+  }
+
+  @media screen and (max-height: 640px) and (max-width: 400px){
+    padding-top: 135px;
+  }
+
+  &__next-link {
+    position: absolute;
+    right: 50%;
+    bottom: 50px;
+    transform: translate(50%, 50%);
+    color: $page_next_link_color;
+    cursor: pointer;
+    animation: Bob 3s linear infinite;
+    transition: 0.4s;
+    opacity: 1;
+
+    &.hide {
+      transition: 0.7s;
+      opacity: 0;
+    }
+
+    &:hover {
+      color: $page_next_link_color_hover;
+      -webkit-animation-play-state: paused;
+      -moz-animation-play-state: paused;
+      -o-animation-play-state: paused;
+      animation-play-state: paused;
+    }
+  }
+
+  &.extender {
+    min-height: 1080px;
+    padding: 20% 0 40px;
+  }
+
+  &__title {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 80px;
+    max-width: 560px;
+    margin: 65px auto 70px;
+    flex: 2;
+
+    @media screen and (max-width: 600px){
+      max-height: 120px;
+    }
+    @media screen and (max-width: 500px){
+      max-height: 90px;
+    }
+    @media screen and (max-width: 400px){
+      max-height: 70px;
+    }
+
+    & a {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+
+      & img {
+        height: auto;
+        max-width: 80%;
+
+        @media screen and (max-width: 800px){
+          max-width: 90%;
+        }
+      }
+    }
+  }
+
+  &__hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex: 3;
+
+    & img {
+      max-height: 90%;
+      max-width: 90%;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  color: $container_color;
+  background: $container_background;
+  align-self: center;
+  flex: 1;
+
+  @media screen and (max-width: 410px){
+    padding: 18px;
+  }
+
+  & span {
+    color: $container_color_highlight;
+  }
+
+  & p {
+    padding: 0 5px;
+  }
+
+  & .section:not(:last-child){
+    margin-bottom: 80px;
+
+    @media screen and (max-width: 500px){
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.section {
+  position: relative;
+
+  & > #section_scroll_anchor {
+    position: absolute;
+    top: -130px;
+    opacity: 0;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 10px;
+    font-family: initial;
+    font-size: $section_title_fontsize;
+
+    @media screen and (max-width: 410px) {
+      font-size: $section_title_fontsize_mobile;
+    }
+
+      & > span {
+      color: $container_color;
+    }
+
+    &:after {
+      content: "";
+      width: 100%;
+      margin: 5px 0 15px -10px;
+      border-bottom: 3px solid $underline_color;
+    }
+  }
+
+  &__content {
+    font-size: $section_content_fontsize;
+
+    @media screen and (max-width: 410px) {
+      font-size: $section_content_fontsize_mobile;
+    }
+
+    &__list.fa-ul {
+      margin: 5px 0 0 50px;
+
+      & li {
+        margin: 3px 0;
+
+        @media screen and (max-width: 570px){
+          margin: 10px 0;
+        }
+
+        & > span {
+          height: 100%;
+
+          & > i {
+            height: 100%;
+            line-height: 100%;
+
+            &:before {
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* KEYFRAMES */
+
+@keyframes Bob {
+  0%, 100% {
+    transform: translate(50%, 50%) scale(1,1);
+    bottom: 50px;
+  }
+  50% {
+    transform: translate(50%, 50%) scale(1.1,1.1);
+    bottom: 80px;
+  }
+}

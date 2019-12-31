@@ -1,0 +1,202 @@
+/* SUPER GLOBALS */
+
+@import 'globals';
+
+/* VARIABLES */
+
+$navigation_background: $colors_black;
+
+$link_color: $colors_red;
+$link_fontsize: 18px;
+$link_fontsize_tablet: 14px;
+$link_fontsize_tablet_brand: 22px;
+
+$link_hover_color: $colors_white;
+$link_hover_background: $colors_red;
+
+$brand_fontsize: 26px;
+$brand_active_color: $colors_white;
+$brand_active_background: $colors_red;
+
+$hamburger_color: $colors_red;
+$hamburger_color_open: $colors_white;
+$hamburger_rotate_degrees: 855deg;
+
+$links_hidden_background: $colors_black;
+$links_hidden_border: $colors_red;
+$links_hidden_start_top: -290px;
+$links_hidden_start_right: -205px;
+$links_hidden_start_top_tablet: -250px;
+$links_hidden_start_right_tablet: -165px;
+$links_hidden_end_top: 0;
+$links_hidden_end_right: 0;
+$links_hidden_link_color: $colors_red;
+$links_hidden_link_background: $colors_black;
+$links_hidden_link_color_hover: $colors_white;
+$links_hidden_link_background_hover: $colors_red;
+$links_hidden_cover_fontsize: 20px;
+$links_hidden_cover_color: $colors_white;
+$links_hidden_cover_background: $colors_red;
+
+$MEDIA_navigation_brand_mobile_width: 400px;
+/* Elements */
+
+
+
+/* ID's */
+
+
+/* Classes */
+
+.navigation {
+  position: fixed;
+  top: 0;
+  display: flex;
+  max-height: 74px;
+  height: 100%;
+  width: 100%;
+  line-height: 74px;
+  background: $navigation_background;
+  z-index: 2;
+
+  @media screen and (max-width: $MEDIA_navigation_brand_mobile_width){
+    //max-height: 70px;
+  }
+
+  &__links-left,
+  &__links-right
+  {
+    display: flex;
+  }
+  &__links-right {
+    margin-left: auto;
+  }
+
+  &__brand
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
+    max-width: 160px;
+    padding: 12px 45px 0 35px;
+    border-radius: 0 0 20px 0;
+
+    @media screen and (max-width: 380px){
+      min-width: 150px;
+    }
+
+    @media screen and (max-width: $MEDIA_navigation_brand_mobile_width){
+      padding: 12px 10px 0 5px;
+    }
+
+    &__title {
+      height: 75%;
+      width: 85%;
+    }
+  }
+
+  &__floater {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2;
+
+    * {
+      pointer-events: initial;
+    }
+
+    &__links-container {
+      $elements_cover: & +__cover;
+
+      display: flex;
+      position: absolute;
+      top: $links_hidden_start_top;
+      right: $links_hidden_start_right;
+      background: $links_hidden_background;
+      flex-direction: column;
+      padding: 20px 0 115px 45px;
+      border: 3px solid $colors_white;
+      border-top: 0;
+      border-right: 0;
+      border-bottom-left-radius: 60px;
+      cursor: pointer;
+      transition: 0.5s;
+      overflow: hidden;
+
+      @media screen and (max-width: 550px){
+        top: $links_hidden-start_top_tablet;
+        right: $links_hidden_start_right_tablet;
+        padding: 10px 0 85px 5px;
+      }
+
+      &__cover {
+
+        position: absolute;
+        left: 53px;
+        bottom: -56px;
+        height: 100px;
+        line-height: 115px;
+        width: 500px;
+        color: $links_hidden_cover_color;
+        background: $links_hidden_cover_background;
+        font-size: $links_hidden_cover_fontsize;
+        font-weight: bold;
+        text-align: center;
+        transition: 0.5s;
+        transform: translate(-50%,-50%) rotate(36deg);
+
+        &__image {
+          height: 14%;
+          width: 12%;
+        }
+      }
+
+      &.hovered {
+        & {
+          top: $links_hidden_end_top;
+          right: $links_hidden_end_right;
+        }
+        #{$elements_cover} {
+          line-height: 100px;
+          @media screen and (max-width: 550px) {
+            left: 70px;
+            height: 90px;
+            line-height: 80px;
+            transform: translate(-50%,-50%) rotate(0);
+          }
+        }
+      }
+
+      &__link
+      {
+        display: block;
+        min-width: 210px;
+        color: $links_hidden_link_color;
+        text-decoration: none;
+        font-size: $link_fontsize;
+        font-weight: bold;
+        text-align: left;
+        line-height: 30px;
+        padding: 10px 20px;
+        margin: 5px 0;
+        border-radius: 30px 0 0 30px;
+
+        @media screen and (max-width: 550px){
+          font-size: $link_fontsize_tablet;
+        }
+
+        &:hover
+        {
+          color: $links_hidden_link_color_hover;
+          background: $links_hidden_link_background_hover;
+        }
+      }
+    }
+  }
+}
