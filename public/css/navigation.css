@@ -11,8 +11,10 @@
   height: 100%;
   width: 100%;
   line-height: 74px;
-  background: black;
+  transition: 0.15s;
   z-index: 2; }
+  .navigation.scrolled {
+    background: black; }
   .navigation__links-left, .navigation__links-right {
     display: flex; }
   .navigation__links-right {
@@ -71,10 +73,7 @@
         font-weight: bold;
         text-align: center;
         transition: 0.5s;
-        transform: translate(-50%, -50%) rotate(36deg); }
-        .navigation__floater__links-container__cover__image {
-          height: 14%;
-          width: 12%; }
+        transform: translate(-50%, -50%) rotate(40deg); }
       .navigation__floater__links-container.hovered {
         top: 0;
         right: 0; }
@@ -85,7 +84,8 @@
             left: 70px;
             height: 90px;
             line-height: 80px;
-            transform: translate(-50%, -50%) rotate(0); } }
+            transform: translate(-50%, -50%) rotate(0);
+            font-size: 18px; } }
       .navigation__floater__links-container__link {
         display: block;
         min-width: 210px;

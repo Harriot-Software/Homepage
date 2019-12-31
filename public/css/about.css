@@ -18,8 +18,8 @@ a {
   .page__next-link {
     position: absolute;
     right: 50%;
-    bottom: 50px;
-    transform: translate(50%, 50%);
+    bottom: 15%;
+    transform: translate(50%, 40%);
     color: red;
     cursor: pointer;
     animation: Bob 3s linear infinite;
@@ -145,10 +145,10 @@ a {
 /* KEYFRAMES */
 @keyframes Bob {
   0%, 100% {
-    transform: translate(50%, 50%) scale(1, 1);
-    bottom: 50px; }
+    transform: translate(50%, 40%) scale(1, 1);
+    bottom: 15%; }
   50% {
-    transform: translate(50%, 50%) scale(1.1, 1.1);
-    bottom: 80px; } }
+    transform: translate(50%, 40%) scale(1.1, 1.1);
+    bottom: 20%; } }
 
 /*# sourceMappingURL=about.css.map */

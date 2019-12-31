@@ -73,6 +73,25 @@ class NavigationHandler {
                 this.hidden_links.classList.remove("hovered");
             }
         });
+
+        /*
+        * Upon scrolling page, give navigation
+        * the ".scrolled" class
+        */
+        window.addEventListener('scroll', () => {
+
+            const navigation = document.getElementsByClassName('navigation')[0];
+
+            if (window.scrollY === 0) {
+                if (navigation.classList.contains("scrolled")){
+                    navigation.classList.remove("scrolled");
+                }
+            } else {
+                navigation.classList.add("scrolled");
+            }
+
+        });
+
     }
 
 }

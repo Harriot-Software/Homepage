@@ -4,7 +4,7 @@
 
 /* VARIABLES */
 
-$navigation_background: $colors_black;
+$navigation_scrolled_background: $colors_black;
 
 $link_color: $colors_red;
 $link_fontsize: 18px;
@@ -35,6 +35,7 @@ $links_hidden_link_background: $colors_black;
 $links_hidden_link_color_hover: $colors_white;
 $links_hidden_link_background_hover: $colors_red;
 $links_hidden_cover_fontsize: 20px;
+$links_hidden_cover_fontsize_tablet: 18px;
 $links_hidden_cover_color: $colors_white;
 $links_hidden_cover_background: $colors_red;
 
@@ -56,11 +57,11 @@ $MEDIA_navigation_brand_mobile_width: 400px;
   height: 100%;
   width: 100%;
   line-height: 74px;
-  background: $navigation_background;
+  transition: 0.15s;
   z-index: 2;
 
-  @media screen and (max-width: $MEDIA_navigation_brand_mobile_width){
-    //max-height: 70px;
+  &.scrolled {
+    background: $navigation_scrolled_background;
   }
 
   &__links-left,
@@ -127,7 +128,6 @@ $MEDIA_navigation_brand_mobile_width: 400px;
       }
 
       &__cover {
-
         position: absolute;
         left: 53px;
         bottom: -56px;
@@ -140,19 +140,16 @@ $MEDIA_navigation_brand_mobile_width: 400px;
         font-weight: bold;
         text-align: center;
         transition: 0.5s;
-        transform: translate(-50%,-50%) rotate(36deg);
-
-        &__image {
-          height: 14%;
-          width: 12%;
-        }
+        transform: translate(-50%,-50%) rotate(40deg);
       }
 
       &.hovered {
+
         & {
           top: $links_hidden_end_top;
           right: $links_hidden_end_right;
         }
+
         #{$elements_cover} {
           line-height: 100px;
           @media screen and (max-width: 550px) {
@@ -160,6 +157,7 @@ $MEDIA_navigation_brand_mobile_width: 400px;
             height: 90px;
             line-height: 80px;
             transform: translate(-50%,-50%) rotate(0);
+            font-size: $links_hidden_cover_fontsize_tablet;
           }
         }
       }

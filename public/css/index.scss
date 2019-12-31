@@ -81,13 +81,15 @@ $learn_more_link_border: $colors_white;
         background: $learn_more_link_background;
         font-size: $learn_more_link_fontsize;
         font-weight: bolder;
-        text-align: center;
         padding: 18px 20px;
         margin: 20px;
+        color: $learn_more_link_color;
         border: 1px solid #ba3329;
         border-radius: 15px;
         box-shadow: inset 0 1px 0 #ffb0aa, inset 0 -1px 0 #d44d44, inset 0 0 0 1px #ed837b, 0 2px 4px rgba(0, 0, 0, 0.2);
         text-shadow: 0 0 120px hsla(0,0%,100%,1), 0 3px 8px hsla(0,0%,0%,0.7);
+        text-align: center;
+        text-decoration: none;
         flex: 1 0 60%;
 
         &:before {
@@ -100,10 +102,6 @@ $learn_more_link_border: $colors_white;
           border-radius: 15px;
           background: linear-gradient(hsla(0,0%,100%,0.20), hsla(0,0%,100%,0.05));
           content: '';
-        }
-
-        & a {
-          color: $learn_more_link_color;
         }
       }
     }
