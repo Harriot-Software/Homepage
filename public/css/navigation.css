@@ -21,19 +21,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 140px;
-    max-width: 160px;
-    padding: 12px 45px 0 35px;
-    border-radius: 0 0 20px 0; }
-    @media screen and (max-width: 380px) {
-      .navigation__brand {
-        min-width: 150px; } }
-    @media screen and (max-width: 400px) {
-      .navigation__brand {
-        padding: 12px 10px 0 5px; } }
-    .navigation__brand__title {
-      height: 75%;
-      width: 85%; }
+    max-width: 125px;
+    padding: 24px 35px 0; }
+    .navigation__brand > img {
+      height: 100%;
+      width: 100%; }
   .navigation__floater {
     position: fixed;
     top: 0;
