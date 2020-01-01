@@ -91,33 +91,23 @@ $project_description_background: $colors_black;
   box-sizing: border-box;
   background: $colors_black;
 
+  &__title {
+    max-width: 550px;
+    padding: 80px 90px 100px;
+    margin: 0 auto;
+    text-align: center;
+
+    & img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
   &__projects-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     height: inherit;
-    overflow: auto;
-
-
-    &__title {
-      max-width: 650px;
-      padding-bottom: 5px;
-      margin: 70px 45px 120px;
-      text-align: center;
-      flex: 1 0 100%;
-
-      @media screen and (max-width: 600px){
-        margin: 70px 30px 50px;
-      }
-      @media screen and (max-width: 500px){
-        margin: 70px 30px 20px;
-      }
-
-      & img {
-        height: auto;
-        max-width: 80%;
-      }
-    }
 
     &__projects {
       display: flex;

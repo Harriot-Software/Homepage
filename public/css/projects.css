@@ -7,27 +7,19 @@
   padding: 73px 0 0;
   box-sizing: border-box;
   background: black; }
+  .page__title {
+    max-width: 550px;
+    padding: 80px 90px 100px;
+    margin: 0 auto;
+    text-align: center; }
+    .page__title img {
+      height: auto;
+      max-width: 100%; }
   .page__projects-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    height: inherit;
-    overflow: auto; }
-    .page__projects-container__title {
-      max-width: 650px;
-      padding-bottom: 5px;
-      margin: 70px 45px 120px;
-      text-align: center;
-      flex: 1 0 100%; }
-      @media screen and (max-width: 600px) {
-        .page__projects-container__title {
-          margin: 70px 30px 50px; } }
-      @media screen and (max-width: 500px) {
-        .page__projects-container__title {
-          margin: 70px 30px 20px; } }
-      .page__projects-container__title img {
-        height: auto;
-        max-width: 80%; }
+    height: inherit; }
     .page__projects-container__projects {
       display: flex;
       justify-content: center;

@@ -14,22 +14,13 @@
   width: 100%;
   overflow: auto; }
   .page__title {
-    display: flex;
-    align-items: center;
-    max-height: 80px;
-    margin: 70px auto 80px;
-    flex: 2; }
-    .page__title a {
-      display: flex;
-      align-self: end;
-      justify-content: center;
-      width: 100%;
-      flex-shrink: 1; }
-      .page__title a img {
-        position: relative;
-        left: 40px;
-        max-height: 80px;
-        max-width: 75%; }
+    max-width: 550px;
+    padding: 80px 90px 100px;
+    margin: 0 auto;
+    text-align: center; }
+    .page__title img {
+      height: auto;
+      max-width: 100%; }
   .page .container {
     display: flex;
     flex-direction: column;
