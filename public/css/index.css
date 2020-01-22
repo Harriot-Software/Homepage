@@ -11,31 +11,14 @@
   .page__container a {
     text-align: center; }
   .page__container__title {
-    display: none;
     width: 100%;
-    min-height: 120px;
-    max-height: 150px;
-    min-width: 240px;
-    max-width: 700px;
-    text-align: center;
-    margin-bottom: 15%; }
-    @media screen and (max-width: 649px) {
-      .page__container__title {
-        margin-bottom: 20%; } }
-    @media screen and (min-width: 650px) {
-      .page__container__title.desktop {
-        display: block; } }
-    @media screen and (max-width: 650px) {
-      .page__container__title.tablet {
-        display: block; } }
+    max-height: 90px;
+    margin-bottom: 15%;
+    text-align: center; }
     .page__container__title__image {
-      height: 100%; }
-    .page__container__title__image.desktop {
-      width: 90%; }
-    .page__container__title__image.tablet {
-      width: 80%;
-      max-width: 410px;
-      max-height: 160px; }
+      max-width: 450px;
+      height: 100%;
+      width: 100%; }
   .page__container__links {
     display: flex;
     flex-wrap: wrap;

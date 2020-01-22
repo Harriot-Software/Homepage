@@ -134,18 +134,18 @@
           flex-direction: column;
           align-items: center;
           padding: 30px; }
-          .project__details__container__content__technologies__title {
+          .project__details__container__content__technologies__title > h3 {
             max-width: 260px;
             text-align: center;
-            font-size: 28px;
+            font-size: 22px;
             padding-bottom: 5px;
-            margin-bottom: 20px;
+            margin: 15px 0 30px;
             border-bottom: 2px solid red; }
-            .project__details__container__content__technologies__title > h3 {
+            .project__details__container__content__technologies__title > h3 > h3 {
               max-height: 30px; }
-            .project__details__container__content__technologies__title span:first-child {
+            .project__details__container__content__technologies__title > h3 span:first-child {
               color: white; }
-            .project__details__container__content__technologies__title span:nth-child(2) {
+            .project__details__container__content__technologies__title > h3 span:nth-child(2) {
               color: red;
               font-weight: bolder; }
           .project__details__container__content__technologies__content {
@@ -153,12 +153,12 @@
             justify-content: center;
             flex-wrap: wrap; }
             .project__details__container__content__technologies__content * {
-              height: 26px;
-              line-height: 26px;
-              font-size: 20px;
-              padding: 4px 13px;
-              margin: 10px 4px 0;
-              border-radius: 4px; }
+              height: 24px;
+              line-height: 24px;
+              font-size: 18px;
+              padding: 4px 12px;
+              margin: 8px 3px 0;
+              border-radius: 3px; }
             .project__details__container__content__technologies__content span.javascript {
               color: black;
               background: #fcdf4a;
@@ -167,14 +167,13 @@
               text-shadow: -2px -1px 0 white, -2px 0px 0 white, -2px 1px 0 white, -1px -2px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white, -1px 2px 0 white, 0px -2px 0 white, 0px -1px 0 white, 0px 0px 0 white, 0px 1px 0 white, 0px 2px 0 white, 1px -2px 0 white, 1px -1px 0 white, 1px 0px 0 white, 1px 1px 0 white, 1px 2px 0 white, 2px -1px 0 white, 2px 0px 0 white, 2px 1px 0 white;
               color: black;
               background: #767ab2;
-              font-size: 24px;
+              font-size: 20px;
               letter-spacing: 2px;
               font-weight: bolder; }
             .project__details__container__content__technologies__content span.mysql {
               color: #ef8f2e;
               background: #006185;
-              font-weight: bolder;
-              font-size: 20px; }
+              font-weight: bolder; }
             .project__details__container__content__technologies__content span.nodejs {
               color: #1a1a1a;
               background: #5aad58;
@@ -214,6 +213,7 @@
             margin-bottom: 10px; }
           .project__details__container__content__description span {
             color: #e60000;
+            font-size: 16px;
             font-weight: 600; }
           .project__details__container__content__description p a {
             color: #e60000; }

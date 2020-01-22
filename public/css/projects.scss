@@ -20,7 +20,7 @@ $project_image_shader_background: hsla(0,0%,0%,0.25);
 
 $chevron_rotate_deg: 15deg;
 
-$project_technologies_title_fontsize: 28px;
+$project_technologies_title_fontsize: 22px;
 $project_technologies_title_color_left: $colors_white;
 $project_technologies_title_color_right: $colors_red_light;
 $project_technologies_title_underline_color: $colors_red_light;
@@ -270,12 +270,12 @@ $project_description_background: $colors_black;
           align-items: center;
           padding: 30px;
 
-          &__title {
+          &__title > h3 {
             max-width: 260px;
             text-align: center;
             font-size: $project_technologies_title_fontsize;
             padding-bottom: 5px;
-            margin-bottom: 20px;
+            margin: 15px 0 30px;
             border-bottom: 2px solid $project_technologies_title_underline_color;
 
             & > h3 {
@@ -297,12 +297,12 @@ $project_description_background: $colors_black;
             flex-wrap: wrap;
 
             & * {
-              height: 26px;
-              line-height: 26px;
-              font-size: 20px;
-              padding: 4px 13px;
-              margin: 10px 4px 0;
-              border-radius: 4px;
+              height: 24px;
+              line-height: 24px;
+              font-size: 18px;
+              padding: 4px 12px;
+              margin: 8px 3px 0;
+              border-radius: 3px;
             }
 
             & span.javascript {
@@ -315,7 +315,7 @@ $project_description_background: $colors_black;
 
               color: $php_color;
               background: $php_background;
-              font-size: 24px;
+              font-size: 20px;
               letter-spacing: 2px;
               font-weight: bolder;
             }
@@ -323,7 +323,6 @@ $project_description_background: $colors_black;
               color: $mysql_color;
               background: $mysql_background;
               font-weight: bolder;
-              font-size: 20px;
             }
             & span.nodejs {
               color: $nodejs_color;
@@ -374,6 +373,7 @@ $project_description_background: $colors_black;
 
           & span {
             color: $colors_red;
+            font-size: 16px;
             font-weight: 600;
           }
 

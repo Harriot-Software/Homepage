@@ -67,7 +67,8 @@ a {
     .container {
       padding: 18px; } }
   .container span {
-    color: red; }
+    color: red;
+    font-weight: 600; }
   .container p {
     padding: 0 5px; }
   .container .section:not(:last-child) {

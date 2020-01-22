@@ -23,8 +23,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 125px;
-    padding: 15px 25px 9px; }
+    max-width: 110px;
+    padding: 15px 25px 12px; }
     .navigation__brand > img {
       height: 100%;
       width: 100%; }
@@ -43,7 +43,7 @@
     .navigation__floater__links-container {
       display: flex;
       position: absolute;
-      top: -290px;
+      top: -273px;
       right: -205px;
       background: black;
       flex-direction: column;
@@ -78,25 +78,22 @@
         top: 0;
         right: 0; }
       .navigation__floater__links-container.hovered .navigation__floater__links-container__cover {
-        line-height: 100px; }
-        @media screen and (max-width: 550px) {
-          .navigation__floater__links-container.hovered .navigation__floater__links-container__cover {
-            left: 70px;
-            height: 90px;
-            line-height: 80px;
-            transform: translate(-50%, -50%) rotate(0);
-            font-size: 18px; } }
+        left: 70px;
+        height: 90px;
+        line-height: 80px;
+        transform: translate(-50%, -50%) rotate(0);
+        font-size: 18px; }
       .navigation__floater__links-container__link {
         display: block;
         min-width: 210px;
         color: #e60000;
         text-decoration: none;
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 600;
         text-align: left;
         line-height: 30px;
         padding: 10px 20px;
-        margin: 5px 0;
+        margin: 2px 0;
         border-radius: 30px 0 0 30px; }
         @media screen and (max-width: 550px) {
           .navigation__floater__links-container__link {
@@ -104,5 +101,9 @@
         .navigation__floater__links-container__link:hover {
           color: white;
           background: #e60000; }
+        .navigation__floater__links-container__link.primary {
+          font-weight: 900; }
+        .navigation__floater__links-container__link:not(.primary) {
+          opacity: 0.9; }
 
 /*# sourceMappingURL=navigation.css.map */
