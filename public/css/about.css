@@ -9,14 +9,6 @@ a {
   display: flex;
   flex-direction: column;
   width: 100%; }
-  .page__title {
-    max-width: 450px;
-    padding: 80px 90px 100px;
-    margin: 0 auto;
-    text-align: center; }
-    .page__title img {
-      height: auto;
-      max-width: 100%; }
   .page:not(.extender) {
     padding-top: 73px;
     background: url("../img/BACKGROUNDTEMP.jpg") top center no-repeat; }

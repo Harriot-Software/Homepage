@@ -7,14 +7,6 @@
   padding: 73px 0 0;
   box-sizing: border-box;
   background: black; }
-  .page__title {
-    max-width: 550px;
-    padding: 80px 90px 100px;
-    margin: 0 auto;
-    text-align: center; }
-    .page__title img {
-      height: auto;
-      max-width: 100%; }
   .page__projects-container {
     display: flex;
     justify-content: center;

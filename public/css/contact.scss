@@ -106,18 +106,6 @@ $form_body_fontsize: 18px;
   width: 100%;
   overflow: auto;
 
-  &__title {
-    max-width: 550px;
-    padding: 80px 90px 100px;
-    margin: 0 auto;
-    text-align: center;
-
-    & img {
-      height: auto;
-      max-width: 100%;
-    }
-  }
-
   & .container {
     display: flex;
     flex-direction: column;

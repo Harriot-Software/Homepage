@@ -32,18 +32,6 @@ a {
   flex-direction: column;
   width: 100%;
 
-  &__title {
-    max-width: 450px;
-    padding: 80px 90px 100px;
-    margin: 0 auto;
-    text-align: center;
-
-    & img {
-      height: auto;
-      max-width: 100%;
-    }
-  }
-
   &:not(.extender) {
     padding-top: 73px;
     background: url($background_image) top center no-repeat;

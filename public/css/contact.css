@@ -13,14 +13,6 @@
   max-height: 100%;
   width: 100%;
   overflow: auto; }
-  .page__title {
-    max-width: 550px;
-    padding: 80px 90px 100px;
-    margin: 0 auto;
-    text-align: center; }
-    .page__title img {
-      height: auto;
-      max-width: 100%; }
   .page .container {
     display: flex;
     flex-direction: column;

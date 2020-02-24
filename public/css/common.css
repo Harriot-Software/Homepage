@@ -99,6 +99,21 @@ p {
   background: black; }
   .page.extender {
     overflow: hidden; }
+  .page__title {
+    max-width: 550px;
+    min-width: 280px;
+    padding: 80px 90px 100px;
+    margin: 0 auto;
+    text-align: center; }
+    @media screen and (max-width: 600px) {
+      .page__title {
+        padding: 80px 60px 100px; } }
+    @media screen and (max-width: 460px) {
+      .page__title {
+        padding: 80px 30px 100px; } }
+    .page__title img {
+      height: auto;
+      max-width: 100%; }
   .page .page__shader {
     position: absolute;
     top: 0;

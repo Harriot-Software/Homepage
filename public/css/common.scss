@@ -122,6 +122,27 @@ p {
     overflow: hidden;
   }
 
+  &__title {
+    max-width: 550px;
+    min-width: 280px;
+    padding: 80px 90px 100px;
+    margin: 0 auto;
+    text-align: center;
+
+    @media screen and (max-width: 600px) {
+      padding: 80px 60px 100px;
+    }
+
+    @media screen and (max-width: 460px) {
+      padding: 80px 30px 100px;
+    }
+
+    & img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
   .page__shader {
     position: absolute;
     top: 0;
