@@ -102,8 +102,10 @@
         position: relative;
         top: -14px; }
       .project__details__toggle i {
+        margin-left: 10px;
         transition: 0.4s; }
       .project__details__toggle.open i {
+        margin-left: 12px;
         transform: rotate(90deg); }
       .project__details__toggle:hover span, .project__details__toggle:hover i {
         color: #e60000; }
@@ -130,9 +132,9 @@
           .project__details__container__content__technologies__title > h3 {
             max-width: 260px;
             text-align: center;
-            font-size: 22px;
+            font-size: 20px;
             padding-bottom: 5px;
-            margin: 15px 0 30px;
+            margin: 20px 0 25px;
             border-bottom: 2px solid red; }
             .project__details__container__content__technologies__title > h3 > h3 {
               max-height: 30px; }
@@ -146,10 +148,10 @@
             justify-content: center;
             flex-wrap: wrap; }
             .project__details__container__content__technologies__content * {
-              height: 24px;
-              line-height: 24px;
-              font-size: 18px;
-              padding: 4px 12px;
+              height: 20px;
+              line-height: 20px;
+              font-size: 16px;
+              padding: 4px 10px;
               margin: 8px 3px 0;
               border-radius: 3px; }
             .project__details__container__content__technologies__content span.javascript {
@@ -160,7 +162,7 @@
               text-shadow: -2px -1px 0 white, -2px 0px 0 white, -2px 1px 0 white, -1px -2px 0 white, -1px -1px 0 white, -1px 0px 0 white, -1px 1px 0 white, -1px 2px 0 white, 0px -2px 0 white, 0px -1px 0 white, 0px 0px 0 white, 0px 1px 0 white, 0px 2px 0 white, 1px -2px 0 white, 1px -1px 0 white, 1px 0px 0 white, 1px 1px 0 white, 1px 2px 0 white, 2px -1px 0 white, 2px 0px 0 white, 2px 1px 0 white;
               color: black;
               background: #767ab2;
-              font-size: 20px;
+              font-size: 18px;
               letter-spacing: 2px;
               font-weight: bolder; }
             .project__details__container__content__technologies__content span.mysql {
@@ -184,8 +186,7 @@
             .project__details__container__content__technologies__content span.jquery {
               color: #fcdf4a;
               background: #006ba8;
-              font-weight: bolder;
-              font-size: 20px; }
+              font-weight: bolder; }
         .project__details__container__content__description {
           position: relative;
           display: flex;
@@ -195,6 +196,9 @@
           background: black;
           padding: 30px;
           margin-top: 25px; }
+          @media screen and (max-width: 600px) {
+            .project__details__container__content__description {
+              font-size: 16px; } }
           .project__details__container__content__description:before {
             position: absolute;
             align-self: center;
@@ -206,7 +210,6 @@
             margin-bottom: 10px; }
           .project__details__container__content__description span {
             color: #e60000;
-            font-size: 16px;
             font-weight: 600; }
           .project__details__container__content__description p a {
             color: #e60000; }

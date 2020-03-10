@@ -1,6 +1,7 @@
 /* SUPER GLOBALS */
 @import 'globals';
 
+
 /* VARIABLES */
 
 $title_color_left: $colors_white;
@@ -20,7 +21,7 @@ $project_image_shader_background: hsla(0,0%,0%,0.25);
 
 $chevron_rotate_deg: 15deg;
 
-$project_technologies_title_fontsize: 22px;
+$project_technologies_title_fontsize: 20px;
 $project_technologies_title_color_left: $colors_white;
 $project_technologies_title_color_right: $colors_red_light;
 $project_technologies_title_underline_color: $colors_red_light;
@@ -45,6 +46,7 @@ $jquery_color: $javascript_background;
 $jquery_background: hsla(202, 100%, 33%,1);
 
 $project_description_fontsize: 18px;
+$project_description_fontsize_tablet: 16px;
 $project_description_color: $colors_white;
 $project_description_background: $colors_black;
 
@@ -218,11 +220,13 @@ $project_description_background: $colors_black;
       }
 
       i {
+        margin-left: 10px;
         transition: 0.4s;
       }
 
       &.open {
         i {
+          margin-left: 12px;
           transform: rotate(90deg);
         }
       }
@@ -264,7 +268,7 @@ $project_description_background: $colors_black;
             text-align: center;
             font-size: $project_technologies_title_fontsize;
             padding-bottom: 5px;
-            margin: 15px 0 30px;
+            margin: 20px 0 25px;
             border-bottom: 2px solid $project_technologies_title_underline_color;
 
             & > h3 {
@@ -286,10 +290,10 @@ $project_description_background: $colors_black;
             flex-wrap: wrap;
 
             & * {
-              height: 24px;
-              line-height: 24px;
-              font-size: 18px;
-              padding: 4px 12px;
+              height: 20px;
+              line-height: 20px;
+              font-size: 16px;
+              padding: 4px 10px;
               margin: 8px 3px 0;
               border-radius: 3px;
             }
@@ -304,7 +308,7 @@ $project_description_background: $colors_black;
 
               color: $php_color;
               background: $php_background;
-              font-size: 20px;
+              font-size: 18px;
               letter-spacing: 2px;
               font-weight: bolder;
             }
@@ -335,7 +339,6 @@ $project_description_background: $colors_black;
               color: $jquery_color;
               background: $jquery_background;
               font-weight: bolder;
-              font-size: 20px;
             }
           }
         }
@@ -350,6 +353,10 @@ $project_description_background: $colors_black;
           padding: 30px;
           margin-top: 25px;
 
+          @media screen and (max-width: 600px) {
+            font-size: $project_description_fontsize_tablet;
+          }
+
           &:before {
             position: absolute;
             align-self: center;
@@ -362,7 +369,6 @@ $project_description_background: $colors_black;
 
           & span {
             color: $colors_red;
-            font-size: 16px;
             font-weight: 600;
           }
 
