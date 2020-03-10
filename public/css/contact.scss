@@ -41,10 +41,12 @@ $form_button_disabled_border: hsla(0,100%,45%,0.4);
 
 $form_label_color: $colors_white;
 $form_label_fontsize: 18px;
+$form_label_fontsize_tablet: 16px;
 
 $form_input_color: $colors_white;
 $form_input_background: hsla(0,0%,10%,0.4);
 $form_input_border: $colors_red_light;
+$form_input_border_light: $colors_red;
 
 $progress_bar_background: $colors_black;
 $progress_bar_border: $colors_red;
@@ -66,6 +68,9 @@ $form_type_checkmark_background_hover: hsla(0,0%,85%,1);
 $form_type_checkmark_background_checked: hsla(120,90%,35%,1);
 
 $form_body_fontsize: 18px;
+
+$tablet_size: 840px;
+$mobile_size: 450px;
 
 /* MIXINS */
 
@@ -102,7 +107,6 @@ $form_body_fontsize: 18px;
   display: flex;
   flex-direction: column;
   padding-top: 73px;
-  max-height: 100%;
   width: 100%;
   overflow: auto;
 
@@ -112,8 +116,16 @@ $form_body_fontsize: 18px;
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 0 40px 0 120px;
+    padding: 0 120px 0 120px;
     flex: 3;
+
+    @media screen and (max-width: $mobile_size) {
+      padding: 0 25px 0 25px;
+    }
+
+    @media screen and (max-width: $tablet_size) {
+      padding: 0 45px 0 45px;
+    }
 
     & .sidebar {
       position: absolute;
@@ -126,6 +138,10 @@ $form_body_fontsize: 18px;
       padding: 15px 0;
       background: $sidebar_background;
       border-radius: 0 20px 20px 0;
+
+      @media screen and (max-width: $tablet_size) {
+        display: none;
+      }
 
       & .social-icon {
         position: relative;
@@ -206,10 +222,10 @@ $form_body_fontsize: 18px;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 300px;
+      min-height: 260px;
       width: 100%;
       max-width: 800px;
-      margin: 40px 0;
+      margin: 25px 0 35px 0;
       border: 2px solid $colors_white;
       border-radius: 3px;
       overflow: hidden;
@@ -237,6 +253,10 @@ $form_body_fontsize: 18px;
           align-items: center;
           margin-right: 25px;
           flex: 1;
+
+          @media screen and (max-width: $tablet_size) {
+            display: none;
+          }
 
           &__bar {
             position: relative;
@@ -333,6 +353,10 @@ $form_body_fontsize: 18px;
         background: $colors_black;
         padding: 20px 40px;
 
+        @media screen and (max-width: $tablet_size) {
+          align-items: center;
+        }
+
         &:not(.active) {
           z-index: -1;
         }
@@ -360,6 +384,12 @@ $form_body_fontsize: 18px;
             }
           }
 
+          @media screen and (max-width: $tablet_size) {
+            max-width: 500px;
+            left: initial;
+            transform: translateX(0);
+          }
+
           & h2 {
             font-size: $form_title_fontsize;
 
@@ -385,15 +415,24 @@ $form_body_fontsize: 18px;
           display: flex;
           margin: 12px 0;
 
-          &:not(.email-step__title):before {
-            position: absolute;
-            display: flex;
-            top: 50%;
-            right: 250px;
-            border: 3px solid white;
-            background: black;
-            border-radius: 3px;
-            content: "";
+          &:not(.email-step__title) {
+
+            @media screen and (max-width: $tablet_size) {
+              flex-direction: column;
+              max-width: 500px;
+              width: 100%;
+            }
+
+            &.error-box {
+              position: absolute;
+              display: flex;
+              top: 50%;
+              right: 250px;
+              border: 3px solid white;
+              background: black;
+              border-radius: 3px;
+              content: "";
+            }
 
             &#first-name-error {
               content: "Empty name was given!";
@@ -405,6 +444,13 @@ $form_body_fontsize: 18px;
             line-height: 40px;
             color: $form_label_color;
             font-size: $form_label_fontsize;
+
+            @media screen and (max-width: $tablet_size){
+              height: 35px;
+              line-height: 35px;
+              margin-left: 15px;
+              font-size: $form_label_fontsize_tablet;
+            }
           }
 
           & > input {
@@ -416,6 +462,15 @@ $form_body_fontsize: 18px;
             border-radius: 15px 15px 2px 2px;
             text-align: center;
             padding: 5px 10px 8px;
+
+            @media screen and (max-width: $tablet_size) {
+              margin: 0;
+              border-top: 2px solid $form_input_border_light;
+              border-right: 2px solid $form_input_border_light;
+              border-left: 2px solid $form_input_border_light;
+              border-bottom: 2px solid $form_input_border;
+              border-radius: 8px 8px 5px 5px;
+            }
           }
         }
       }

@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   padding-top: 73px;
-  max-height: 100%;
   width: 100%;
   overflow: auto; }
   .page .container {
@@ -19,8 +18,14 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 0 40px 0 120px;
+    padding: 0 120px 0 120px;
     flex: 3; }
+    @media screen and (max-width: 450px) {
+      .page .container {
+        padding: 0 25px 0 25px; } }
+    @media screen and (max-width: 840px) {
+      .page .container {
+        padding: 0 45px 0 45px; } }
     .page .container .sidebar {
       position: absolute;
       top: 15%;
@@ -32,6 +37,9 @@
       padding: 15px 0;
       background: #262626;
       border-radius: 0 20px 20px 0; }
+      @media screen and (max-width: 840px) {
+        .page .container .sidebar {
+          display: none; } }
       .page .container .sidebar .social-icon {
         position: relative;
         left: 45%;
@@ -84,10 +92,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 300px;
+      min-height: 260px;
       width: 100%;
       max-width: 800px;
-      margin: 40px 0;
+      margin: 25px 0 35px 0;
       border: 2px solid white;
       border-radius: 3px;
       overflow: hidden;
@@ -112,6 +120,9 @@
           align-items: center;
           margin-right: 25px;
           flex: 1; }
+          @media screen and (max-width: 840px) {
+            .page .container .contact-form__controls__progress {
+              display: none; } }
           .page .container .contact-form__controls__progress__bar {
             position: relative;
             height: 28px;
@@ -176,6 +187,9 @@
         width: 100%;
         background: black;
         padding: 20px 40px; }
+        @media screen and (max-width: 840px) {
+          .page .container .contact-form .email-step {
+            align-items: center; } }
         .page .container .contact-form .email-step:not(.active) {
           z-index: -1; }
         .page .container .contact-form .email-step__title {
@@ -197,6 +211,11 @@
               /* Hide sign in text */ }
               .page .container .contact-form .email-step__title p {
                 display: none; } }
+          @media screen and (max-width: 840px) {
+            .page .container .contact-form .email-step__title {
+              max-width: 500px;
+              left: initial;
+              transform: translateX(0); } }
           .page .container .contact-form .email-step__title h2 {
             font-size: 24px; }
             @media screen and (max-height: 800px) {
@@ -210,7 +229,12 @@
         position: relative;
         display: flex;
         margin: 12px 0; }
-        .page .container .contact-form #step-email-details > div:not(.email-step__title):before {
+        @media screen and (max-width: 840px) {
+          .page .container .contact-form #step-email-details > div:not(.email-step__title) {
+            flex-direction: column;
+            max-width: 500px;
+            width: 100%; } }
+        .page .container .contact-form #step-email-details > div:not(.email-step__title).error-box {
           position: absolute;
           display: flex;
           top: 50%;
@@ -219,13 +243,19 @@
           background: black;
           border-radius: 3px;
           content: ""; }
-          .page .container .contact-form #step-email-details > div:not(.email-step__title):before#first-name-error {
-            content: "Empty name was given!"; }
+        .page .container .contact-form #step-email-details > div:not(.email-step__title)#first-name-error {
+          content: "Empty name was given!"; }
         .page .container .contact-form #step-email-details > div > label {
           height: 40px;
           line-height: 40px;
           color: white;
           font-size: 18px; }
+          @media screen and (max-width: 840px) {
+            .page .container .contact-form #step-email-details > div > label {
+              height: 35px;
+              line-height: 35px;
+              margin-left: 15px;
+              font-size: 16px; } }
         .page .container .contact-form #step-email-details > div > input {
           margin-left: auto;
           border: none;
@@ -235,6 +265,14 @@
           border-radius: 15px 15px 2px 2px;
           text-align: center;
           padding: 5px 10px 8px; }
+          @media screen and (max-width: 840px) {
+            .page .container .contact-form #step-email-details > div > input {
+              margin: 0;
+              border-top: 2px solid #e60000;
+              border-right: 2px solid #e60000;
+              border-left: 2px solid #e60000;
+              border-bottom: 2px solid red;
+              border-radius: 8px 8px 5px 5px; } }
       .page .container .contact-form #step-email-title {
         flex-direction: row;
         align-items: center;
