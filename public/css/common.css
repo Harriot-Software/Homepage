@@ -100,8 +100,8 @@ p {
   .page.extender {
     overflow: hidden; }
   .page__title {
-    max-width: 550px;
-    min-width: 280px;
+    max-width: 440px;
+    min-width: 260px;
     padding: 80px 90px 100px;
     margin: 0 auto;
     text-align: center; }

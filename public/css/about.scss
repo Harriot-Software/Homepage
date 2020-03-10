@@ -11,8 +11,8 @@ $container_background: $colors_black;
 
 $underline_color: $colors_red_light;
 
-$section_title_fontsize: 34px;
-$section_title_fontsize_mobile: 30px;
+$section_title_fontsize: 30px;
+$section_title_fontsize_mobile: 28px;
 $section_content_fontsize: 18px;
 $section_content_fontsize_mobile: 16px;
 
@@ -173,6 +173,7 @@ a {
           & > i {
             height: 100%;
             line-height: 100%;
+            margin-bottom: 2px;
 
             &:before {
               display: inline-block;
