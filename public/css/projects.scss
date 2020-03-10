@@ -104,6 +104,7 @@ $project_description_background: $colors_black;
       padding: 0 50px;
       overflow: visible;
       background: $colors_black;
+      flex: 1;
 
       @media screen and (max-width: 700px){
         padding: 0 30px;

@@ -57,7 +57,7 @@
       overflow: hidden; }
       @media screen and (max-width: 550px) {
         .navigation__floater__links-container {
-          top: -250px;
+          top: -235px;
           right: -165px;
           padding: 10px 0 85px 5px; } }
       .navigation__floater__links-container__cover {

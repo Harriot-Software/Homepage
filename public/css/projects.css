@@ -18,7 +18,8 @@
       flex-wrap: wrap;
       padding: 0 50px;
       overflow: visible;
-      background: black; }
+      background: black;
+      flex: 1; }
       @media screen and (max-width: 700px) {
         .page__projects-container__projects {
           padding: 0 30px; } }
