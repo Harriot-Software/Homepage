@@ -234,6 +234,11 @@
             flex-direction: column;
             max-width: 500px;
             width: 100%; } }
+        .page .container .contact-form #step-email-details > div:not(.email-step__title) .form-error {
+          display: flex;
+          color: white; }
+          .page .container .contact-form #step-email-details > div:not(.email-step__title) .form-error.hidden {
+            display: none; }
         .page .container .contact-form #step-email-details > div:not(.email-step__title).error-box {
           position: absolute;
           display: flex;

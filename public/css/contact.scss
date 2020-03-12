@@ -410,6 +410,7 @@ $mobile_size: 450px;
 
       #step-email-details {
 
+
         & > div {
           position: relative;
           display: flex;
@@ -421,6 +422,15 @@ $mobile_size: 450px;
               flex-direction: column;
               max-width: 500px;
               width: 100%;
+            }
+
+            & .form-error {
+              display: flex;
+              color: white;
+
+              &.hidden {
+                display: none;
+              }
             }
 
             &.error-box {

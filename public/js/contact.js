@@ -115,7 +115,8 @@ class FormCarouselHandler {
             let error_fields = [
                 document.getElementById("first-name-error"),
                 document.getElementById("last-name-error"),
-                document.getElementById("email-address-error")
+                document.getElementById("email-address-error"),
+                document.getElementById("email-address-error-invalid")
             ];
 
             error_fields.forEach((field) => {
@@ -133,7 +134,7 @@ class FormCarouselHandler {
                     let error_field = document.getElementById(field.id + "-error");
 
                     if (error_field.classList.contains("hidden")) {
-                        field.classList.remove("hidden");
+                        error_field.classList.remove("hidden");
                     }
 
                     valid_values = false;
@@ -141,10 +142,10 @@ class FormCarouselHandler {
                 } else if (field.id === "email-address") {
                     if (!validateEmail(field.value)) {
 
-                        let error_field = document.getElementById(field.id + "-error");
+                        let error_field = document.getElementById(field.id + "-error-invalid");
 
                         if (error_field.classList.contains("hidden")) {
-                            field.classList.remove("hidden");
+                            error_field.classList.remove("hidden");
                         }
 
                         valid_values = false;
