@@ -212,7 +212,8 @@
             color: #e60000;
             font-weight: 600; }
           .project__details__container__content__description p a {
-            color: #e60000; }
+            color: white;
+            text-decoration: none; }
           .project__details__container__content__description p:last-child {
             margin-top: 20px; }
 

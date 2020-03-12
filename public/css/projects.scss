@@ -373,7 +373,8 @@ $project_description_background: $colors_black;
           }
 
           & p a {
-            color: $colors_red;
+            color: white;
+            text-decoration: none;
           }
 
           & p:last-child {
