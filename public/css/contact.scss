@@ -119,11 +119,11 @@ $mobile_size: 450px;
     flex: 3;
 
     @media screen and (min-width: 451px) and (max-width: $tablet_size) {
-      padding: 0 45px 0 45px;
+      padding: 0 45px 70px 45px;
     }
 
     @media screen and (max-width: $mobile_size) {
-      padding: 0 10px 0 10px;
+      padding: 0 10px 70px 10px;
     }
 
     & .sidebar {
@@ -139,7 +139,14 @@ $mobile_size: 450px;
       border-radius: 0 20px 20px 0;
 
       @media screen and (max-width: $tablet_size) {
-        display: none;
+        top: initial;
+        left: 50%;
+        bottom: 0;
+        flex-direction: row;
+        width: initial;
+        padding: 20px 35px 5px 35px;
+        border-radius: 20px 20px 0 0;
+        transform: translateX(-50%);
       }
 
       & .social-icon {
@@ -152,6 +159,12 @@ $mobile_size: 450px;
         background: $social_icon_shadow;
         border-radius: 8px;
         transition: 0.5s;
+
+        @media screen and (max-width: $tablet_size) {
+          left: initial;
+          transform: initial;
+          margin: 0 5px;
+        }
 
         &:hover > span {
           transition: 0.1s;
@@ -227,6 +240,7 @@ $mobile_size: 450px;
       margin: 25px 0 35px 0;
       border: 2px solid $colors_white;
       border-radius: 3px;
+      background: black;
       overflow: hidden;
       transition: 0.5s;
       flex-shrink: 1;
@@ -380,17 +394,23 @@ $mobile_size: 450px;
 
           @media screen and (max-height: 800px) {
             font-size: $form_title_description_fontsize_tablet;
-
-            /* Hide sign in text */
-            & p {
-              display: none;
-            }
           }
 
           @media screen and (max-width: $tablet_size) {
             max-width: 500px;
             left: initial;
             transform: translateX(0);
+          }
+
+          & p {
+            margin: 2px 0;
+
+            &:first-of-type {
+              margin-top: 7px;
+            }
+            &:last-of-type {
+              margin-bottom: 5px;
+            }
           }
 
           & h2 {
@@ -403,10 +423,6 @@ $mobile_size: 450px;
             & span {
               color: $colors_red_light;
             }
-          }
-
-          & p {
-            margin: 5px 0;
           }
         }
       }
