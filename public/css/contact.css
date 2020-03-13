@@ -20,12 +20,12 @@
     position: relative;
     padding: 0 120px 0 120px;
     flex: 3; }
-    @media screen and (max-width: 450px) {
-      .page .container {
-        padding: 0 25px 0 25px; } }
-    @media screen and (max-width: 840px) {
+    @media screen and (max-width: 880px) {
       .page .container {
         padding: 0 45px 0 45px; } }
+    @media screen and (max-width: 450px) {
+      .page .container {
+        padding: 0 10px 0 10px; } }
     .page .container .sidebar {
       position: absolute;
       top: 15%;
@@ -37,7 +37,7 @@
       padding: 15px 0;
       background: #262626;
       border-radius: 0 20px 20px 0; }
-      @media screen and (max-width: 840px) {
+      @media screen and (max-width: 880px) {
         .page .container .sidebar {
           display: none; } }
       .page .container .sidebar .social-icon {
@@ -102,6 +102,9 @@
       transition: 0.5s;
       flex-shrink: 1;
       /* Form controls */ }
+      @media screen and (max-width: 880px) {
+        .page .container .contact-form {
+          border-radius: 12px; } }
       .page .container .contact-form fieldset {
         overflow: hidden; }
       .page .container .contact-form__controls {
@@ -120,7 +123,7 @@
           align-items: center;
           margin-right: 25px;
           flex: 1; }
-          @media screen and (max-width: 840px) {
+          @media screen and (max-width: 880px) {
             .page .container .contact-form__controls__progress {
               display: none; } }
           .page .container .contact-form__controls__progress__bar {
@@ -187,7 +190,7 @@
         width: 100%;
         background: black;
         padding: 20px 40px; }
-        @media screen and (max-width: 840px) {
+        @media screen and (max-width: 880px) {
           .page .container .contact-form .email-step {
             align-items: center; } }
         .page .container .contact-form .email-step:not(.active) {
@@ -211,7 +214,7 @@
               /* Hide sign in text */ }
               .page .container .contact-form .email-step__title p {
                 display: none; } }
-          @media screen and (max-width: 840px) {
+          @media screen and (max-width: 880px) {
             .page .container .contact-form .email-step__title {
               max-width: 500px;
               left: initial;
@@ -229,16 +232,44 @@
         position: relative;
         display: flex;
         margin: 12px 0; }
-        @media screen and (max-width: 840px) {
+        @media screen and (max-width: 880px) {
           .page .container .contact-form #step-email-details > div:not(.email-step__title) {
             flex-direction: column;
             max-width: 500px;
             width: 100%; } }
         .page .container .contact-form #step-email-details > div:not(.email-step__title) .form-error {
+          position: absolute;
+          top: 50%;
+          right: 220px;
           display: flex;
-          color: white; }
+          padding: 8px 12px;
+          color: white;
+          background: black;
+          border: 1px solid white;
+          transform: translateY(-50%);
+          font-size: 0.9em;
+          text-align: center; }
+          @media screen and (max-width: 880px) {
+            .page .container .contact-form #step-email-details > div:not(.email-step__title) .form-error {
+              top: 8px;
+              right: initial;
+              left: 14px; } }
           .page .container .contact-form #step-email-details > div:not(.email-step__title) .form-error.hidden {
             display: none; }
+          .page .container .contact-form #step-email-details > div:not(.email-step__title) .form-error i {
+            position: absolute;
+            top: 50%;
+            right: -16px;
+            transform: rotate(90deg) translateX(-75%);
+            font-size: 1.5em;
+            color: red; }
+            @media screen and (max-width: 880px) {
+              .page .container .contact-form #step-email-details > div:not(.email-step__title) .form-error i {
+                top: initial;
+                right: initial;
+                left: 10px;
+                bottom: 0;
+                transform: rotate(180deg) translateY(-50%); } }
         .page .container .contact-form #step-email-details > div:not(.email-step__title).error-box {
           position: absolute;
           display: flex;
@@ -255,7 +286,7 @@
           line-height: 40px;
           color: white;
           font-size: 18px; }
-          @media screen and (max-width: 840px) {
+          @media screen and (max-width: 880px) {
             .page .container .contact-form #step-email-details > div > label {
               height: 35px;
               line-height: 35px;
@@ -267,10 +298,10 @@
           color: white;
           background: rgba(26, 26, 26, 0.4);
           border-bottom: 2px solid red;
-          border-radius: 15px 15px 2px 2px;
+          border-radius: 2px;
           text-align: center;
           padding: 5px 10px 8px; }
-          @media screen and (max-width: 840px) {
+          @media screen and (max-width: 880px) {
             .page .container .contact-form #step-email-details > div > input {
               margin: 0;
               border-top: 2px solid #e60000;
@@ -334,18 +365,43 @@
                 content: "\f00d"; }
             .page .container .contact-form #step-email-title > label > .checkmark:hover {
               background: #d9d9d9; }
-      .page .container .contact-form #step-email-body > label {
-        display: flex;
-        margin-top: 10px;
-        overflow: hidden; }
-        .page .container .contact-form #step-email-body > label > textarea {
-          min-height: 200px;
-          padding: 25px;
-          border-radius: 20px;
-          border: none;
-          resize: none;
-          font-size: 18px;
-          flex: 1; }
+      .page .container .contact-form #step-email-body {
+        position: relative; }
+        .page .container .contact-form #step-email-body > label {
+          display: flex;
+          width: 100%;
+          margin: 15px 0 30px 0;
+          overflow: hidden; }
+          @media screen and (max-width: 880px) {
+            .page .container .contact-form #step-email-body > label {
+              padding: 0 15px 0 15px; } }
+          .page .container .contact-form #step-email-body > label > textarea {
+            min-height: 200px;
+            padding: 25px;
+            border-radius: 20px;
+            border: none;
+            resize: none;
+            font-size: 18px;
+            flex: 1; }
+        .page .container .contact-form #step-email-body .form-error {
+          position: absolute;
+          top: 90px;
+          right: 80px;
+          max-width: 250px;
+          padding: 25px 20px;
+          color: white;
+          background: black;
+          border-radius: 4px;
+          text-align: center; }
+          .page .container .contact-form #step-email-body .form-error.hidden {
+            display: none; }
+          .page .container .contact-form #step-email-body .form-error i {
+            position: absolute;
+            top: 50%;
+            left: -16px;
+            color: red;
+            transform: rotate(-90deg) translateX(75%);
+            font-size: 2.3em; }
 
 /* KEYFRAMES */
 @keyframes HideStep {

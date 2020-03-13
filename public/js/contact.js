@@ -4,12 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
     handler.Init();
 
     /* TESTING ONLY */
-    //handler.Test(handler.pages[2]);
+    handler.Test(0);
 });
 
 
 class FormCarouselHandler {
     constructor(){
+
         this.form = document.getElementById("contact-form");
 
         this.progress_element = document.getElementById("progress-content");
@@ -32,20 +33,58 @@ class FormCarouselHandler {
         ];
 
         this.email_body = document.getElementById("email-body");
+
+        this.email_details_fields = [
+            document.getElementById("first-name"),
+            document.getElementById("last-name"),
+            document.getElementById("email-address")
+        ];
+
+        this.email_details_error_fields = [
+            document.getElementById("first-name-error"),
+            document.getElementById("last-name-error"),
+            document.getElementById("email-address-error"),
+            document.getElementById("email-address-error-invalid")
+        ];
+
+        this.email_body_field = document.getElementById("email-body");
+
+        this.email_body_error_fields = [
+            document.getElementById(this.email_body_field.id + "-error"),
+            document.getElementById(this.email_body_field.id + "-error-invalid")
+        ];
     }
 
     Test(page){
-        for (let i = 0; i < this.pages.length; i++){
-            if (this.pages[i].classList.contains("active")){
-                this.pages[i].classList.remove("active");
+
+        if (page < this.pages.length){
+            this.pages.forEach((page) => {
+                page.classList.add("step-hide");
+                page.classList.remove("active");
+            });
+
+            this.pages[page].classList.add("active");
+
+            this.SetHeight(this.pages[page]);
+
+            this.form_previous.disabled = false;
+
+            if (page + 1 === this.pages.length){
+                if (!this.form_next.classList.contains("hide")){
+                    this.form_next.classList.add("hide");
+                }
+                if (this.form_send.classList.contains("hide")){
+                    this.form_send.classList.remove("hide");
+                }
             }
-        }
 
-        if (!page.classList.contains("active")){
-            page.classList.add("active");
-        }
+            this.progress_values.forEach((value) => {
+                this.progress_element.classList.remove("progress-" + value);
+            });
 
-        this.SetHeight(page);
+            const newProgressClass = "progress-" + this.progress_values[page];
+            this.progress_element.classList.add(newProgressClass);
+        }
     }
 
     Init(){
@@ -55,9 +94,35 @@ class FormCarouselHandler {
 
     AddEventListeners() {
 
+        function hideErrorFields(fields) {
+            fields.forEach((field) => {
+                if (!field.classList.contains("hidden")) {
+                    field.classList.add("hidden");
+                }
+            });
+        }
+
+        this.email_details_fields.forEach((field) => {
+            field.addEventListener("click", () => {
+                hideErrorFields(this.email_details_error_fields);
+            });
+        });
+
+        this.email_body_field.addEventListener("click", () => {
+            hideErrorFields(this.email_body_error_fields);
+        });
+
+        this.email_details_error_fields.forEach((field) => {
+            field.addEventListener("click", (event) => { event.preventDefault(); })
+        });
+
+        this.email_body_error_fields.forEach((field) => {
+            field.addEventListener("click", (event) => { event.preventDefault(); })
+        });
+
         this.email_body.addEventListener("keyup", () => {
             this.email_body.style.height = "1px";
-            this.email_body.style.height = (25 + this.email_body.scrollHeight) + "px";
+            this.email_body.style.height = (10 + this.email_body.scrollHeight) + "px";
             this.SetHeight(this.pages[this.pages.length - 1]);
         });
 
@@ -98,6 +163,7 @@ class FormCarouselHandler {
                 }
             }
         });
+
         /* Hide current page, show next page */
         this.form_next.addEventListener("click", () => {
 
@@ -106,20 +172,7 @@ class FormCarouselHandler {
                 return re.test(String(email).toLowerCase());
             }
 
-            let fields = [
-                document.getElementById("first-name"),
-                document.getElementById("last-name"),
-                document.getElementById("email-address")
-            ];
-
-            let error_fields = [
-                document.getElementById("first-name-error"),
-                document.getElementById("last-name-error"),
-                document.getElementById("email-address-error"),
-                document.getElementById("email-address-error-invalid")
-            ];
-
-            error_fields.forEach((field) => {
+            this.email_details_error_fields.forEach((field) => {
                 if (!field.classList.contains("hidden")) {
                     field.classList.add("hidden");
                 }
@@ -127,7 +180,7 @@ class FormCarouselHandler {
 
             let valid_values = true;
 
-            fields.forEach((field) => {
+            this.email_details_fields.forEach((field) => {
 
                 if (field.value === "" || field.value === null || field.value === undefined) {
 
@@ -187,6 +240,44 @@ class FormCarouselHandler {
                     const newProgressClass = "progress-" + this.progress_values[i + 1];
                     this.progress_element.classList.add(newProgressClass);
                     break;
+                }
+            }
+        });
+
+        this.form_send.addEventListener("click", (event) => {
+
+            function validateBody(body) {
+                const regex = /g/;
+                return regex.test(String(body).toLowerCase());
+            }
+
+            this.email_body_error_fields.forEach((field) => {
+
+                if (!field.classList.contains("hidden")) {
+                    field.classList.add("hidden");
+                }
+
+            });
+
+            if (this.email_body_field.value === "" ||
+                this.email_body_field.value === null ||
+                this.email_body_field.value === undefined) {
+
+                if (this.email_body_error_fields[0].classList.contains("hidden")) {
+                    this.email_body_error_fields[0].classList.remove("hidden");
+                }
+
+                return event.preventDefault();
+
+            } else if (this.email_body_field.id === "email-address") {
+
+                if (!validateBody(this.email_body_field.value)) {
+
+                    if (this.email_body_error_fields[1].classList.contains("hidden")) {
+                        this.email_body_error_fields[1].classList.remove("hidden");
+                    }
+
+                    return event.preventDefault();
                 }
             }
         });

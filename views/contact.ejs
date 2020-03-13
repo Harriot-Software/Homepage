@@ -75,6 +75,7 @@
                     </label>
                     <div class="form-error hidden" id="first-name-error">
                         Enter a name!
+                        <i class="fas fa-sort-up fa-2x"></i>
                     </div>
                     <input type="text"
                            id="first-name"
@@ -88,6 +89,7 @@
                     </label>
                     <div class="form-error hidden" id="last-name-error">
                         Enter a name!
+                        <i class="fas fa-sort-up fa-2x"></i>
                     </div>
                     <input type="text"
                            id="last-name"
@@ -101,9 +103,11 @@
                     </label>
                     <div class="form-error hidden" id="email-address-error">
                         Enter an email address!
+                        <i class="fas fa-sort-up fa-2x"></i>
                     </div>
                     <div class="form-error hidden" id="email-address-error-invalid">
                         Address is invalid!
+                        <i class="fas fa-sort-up fa-2x"></i>
                     </div>
                     <input type="email"
                            id="email-address"
@@ -169,6 +173,15 @@
                               tabindex="-1"
                               required></textarea>
                 </label>
+
+                <div class="form-error hidden" id="email-body-error">
+                    Please enter a message!
+                    <i class="fas fa-sort-up fa-2x"></i>
+                </div>
+                <div class="form-error hidden" id="email-body-error-invalid">
+                    Message contains forbidden characters!
+                    <i class="fas fa-sort-up fa-2x"></i>
+                </div>
             </fieldset>
 
             <div class="contact-form__controls">
