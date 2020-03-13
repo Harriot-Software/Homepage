@@ -8,7 +8,7 @@ $navigation_scrolled_background: $colors_black;
 
 $link_color: $colors_red;
 $link_fontsize: 18px;
-$link_fontsize_tablet: 14px;
+$link_fontsize_tablet: 15px;
 $link_fontsize_tablet_brand: 22px;
 
 $link_hover_color: $colors_white;
@@ -27,7 +27,7 @@ $links_hidden_border: $colors_red;
 $links_hidden_start_top: -273px;
 $links_hidden_start_right: -205px;
 $links_hidden_start_top_tablet: -235px;
-$links_hidden_start_right_tablet: -165px;
+$links_hidden_start_right_tablet: -180px;
 $links_hidden_end_top: 0;
 $links_hidden_end_right: 0;
 $links_hidden_link_color: $colors_red;
@@ -124,7 +124,7 @@ $MEDIA_navigation_brand_mobile_width: 400px;
       @media screen and (max-width: 550px){
         top: $links_hidden-start_top_tablet;
         right: $links_hidden_start_right_tablet;
-        padding: 10px 0 85px 5px;
+        padding: 10px 0 85px 20px;
       }
 
       &__cover {
