@@ -79,7 +79,6 @@ class NavigationHandler {
         * the ".scrolled" class
         */
         window.addEventListener('scroll', () => {
-            console.debug("scrolled");
 
             const navigation = document.getElementsByClassName('navigation')[0];
 

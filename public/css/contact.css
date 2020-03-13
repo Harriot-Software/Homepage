@@ -7,20 +7,19 @@
   display: none !important; }
 
 .page {
-  display: flex;
-  flex-direction: column;
   padding-top: 73px;
   width: 100%;
-  overflow: auto; }
+  background: black; }
   .page .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
     padding: 0 120px 0 120px;
+    background: black;
     flex: 3; }
-    @media screen and (max-width: 880px) {
+    @media screen and (min-width: 451px) and (max-width: 880px) {
       .page .container {
         padding: 0 45px 0 45px; } }
     @media screen and (max-width: 450px) {

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handler.Init();
 
     /* TESTING ONLY */
-    handler.Test(0);
+    //handler.Test(0);
 });
 
 
@@ -118,6 +118,19 @@ class FormCarouselHandler {
 
         this.email_body_error_fields.forEach((field) => {
             field.addEventListener("click", (event) => { event.preventDefault(); })
+        });
+
+        /**
+         * Upon window resize, re-set the height of page
+         */
+        window.addEventListener("resize", () => {
+
+            for (let i = 0; i < this.pages.length -1; i++) {
+                if (this.pages[i].classList.contains("active")) {
+                    this.SetHeight(this.pages[i]);
+                }
+            }
+
         });
 
         this.email_body.addEventListener("keyup", () => {

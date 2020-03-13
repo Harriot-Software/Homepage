@@ -104,22 +104,21 @@ $mobile_size: 450px;
 }
 
 .page {
-  display: flex;
-  flex-direction: column;
   padding-top: 73px;
   width: 100%;
-  overflow: auto;
+  background: black;
 
   & .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
     padding: 0 120px 0 120px;
+    background: black;
     flex: 3;
 
-    @media screen and (max-width: $tablet_size) {
+    @media screen and (min-width: 451px) and (max-width: $tablet_size) {
       padding: 0 45px 0 45px;
     }
 
