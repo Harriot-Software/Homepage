@@ -24,9 +24,9 @@ $hamburger_rotate_degrees: 855deg;
 
 $links_hidden_background: $colors_black;
 $links_hidden_border: $colors_red;
-$links_hidden_start_top: -273px;
+$links_hidden_start_top: -325px;
 $links_hidden_start_right: -205px;
-$links_hidden_start_top_tablet: -235px;
+$links_hidden_start_top_tablet: -305px;
 $links_hidden_start_right_tablet: -180px;
 $links_hidden_end_top: 0;
 $links_hidden_end_right: 0;
@@ -124,7 +124,7 @@ $MEDIA_navigation_brand_mobile_width: 400px;
       @media screen and (max-width: 550px){
         top: $links_hidden-start_top_tablet;
         right: $links_hidden_start_right_tablet;
-        padding: 10px 0 85px 20px;
+        padding: 10px 0 105px 20px;
       }
 
       &__cover {
