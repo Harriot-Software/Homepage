@@ -1,0 +1,7 @@
+To build PROD environment:
+> npm run-script build
+> java NEXT_app.jsp.js prod
+
+TODO:
+- Validator class
+- API

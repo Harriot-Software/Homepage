@@ -1,0 +1,434 @@
+/* SUPER GLOBALS */
+/* VARIABLES */
+/* MIXINS */
+/* ELEMENTS */
+/* CLASSES */
+.hide {
+  display: none !important; }
+
+.page {
+  padding-top: 73px;
+  width: 100%;
+  background: black; }
+  .page .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 145px 0 120px;
+    background: black;
+    flex: 3; }
+    @media screen and (min-width: 451px) and (max-width: 1200px) {
+      .page .container {
+        padding: 0 45px 100px 45px; } }
+    @media screen and (max-width: 450px) {
+      .page .container {
+        padding: 0 10px 100px 10px; } }
+    .page .container .sidebar {
+      position: absolute;
+      top: 15%;
+      left: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 12px 22px 8px;
+      background: black;
+      border: 1px solid white;
+      border-radius: 8px; }
+      @media screen and (max-width: 1200px) {
+        .page .container .sidebar {
+          top: initial;
+          left: 50%;
+          bottom: 25px;
+          flex-direction: row;
+          width: initial;
+          padding: 20px 25px 14px;
+          border-radius: 8px;
+          transform: translateX(-50%); } }
+      .page .container .sidebar .social-icon {
+        position: relative;
+        height: 50px;
+        width: 50px;
+        margin: 10px 0;
+        background: rgba(204, 204, 204, 0.5);
+        border-radius: 8px;
+        transition: 0.5s; }
+        @media screen and (max-width: 1200px) {
+          .page .container .sidebar .social-icon {
+            margin: 0 5px; } }
+        .page .container .sidebar .social-icon:hover > span {
+          transition: 0.1s;
+          bottom: 4px; }
+        .page .container .sidebar .social-icon > span {
+          position: absolute;
+          bottom: 7px;
+          left: 0;
+          display: block;
+          height: 46px;
+          width: 46px;
+          border: 2px solid white;
+          border-radius: 8px;
+          overflow: hidden; }
+          .page .container .sidebar .social-icon > span i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            transform: translate(-50%, -50%);
+            line-height: 46px; }
+        .page .container .sidebar .social-icon.facebook span {
+          color: white;
+          background: #132dae; }
+        .page .container .sidebar .social-icon.facebook:hover span {
+          background: #1839dc; }
+        .page .container .sidebar .social-icon.linkedin span {
+          color: white;
+          background: #014bb2; }
+        .page .container .sidebar .social-icon.linkedin:hover span {
+          background: #0173e4; }
+        .page .container .sidebar .social-icon.github span {
+          color: black;
+          background: white; }
+        .page .container .sidebar .social-icon.github:hover span {
+          background: rgba(255, 255, 255, 0.8); }
+    .page .container .message_error, .page .container .message_success {
+      padding: 35px 20px;
+      color: white;
+      font-size: 14px;
+      font-weight: 600; }
+      .page .container .message_error.hidden, .page .container .message_success.hidden {
+        display: none; }
+    .page .container .message_error {
+      border: 2px solid #e60000; }
+    .page .container .message_success {
+      border: 2px solid green; }
+    .page .container .contact-form {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 260px;
+      width: 100%;
+      max-width: 800px;
+      margin: 25px 0 35px 0;
+      border: 2px solid white;
+      border-radius: 8px;
+      background: black;
+      overflow: hidden;
+      transition: 0.5s;
+      flex-shrink: 1;
+      /* Form controls */ }
+      @media screen and (max-width: 1200px) {
+        .page .container .contact-form {
+          border-radius: 12px; } }
+      .page .container .contact-form fieldset {
+        overflow: hidden; }
+      .page .container .contact-form__controls {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 90%;
+        padding-bottom: 15px;
+        background: black;
+        transform: translateX(-50%);
+        /* Progress bar container */
+        /* Button container */ }
+        .page .container .contact-form__controls__progress {
+          display: flex;
+          align-items: center;
+          margin-right: 25px;
+          flex: 1; }
+          @media screen and (max-width: 1200px) {
+            .page .container .contact-form__controls__progress {
+              display: none; } }
+          .page .container .contact-form__controls__progress__bar {
+            position: relative;
+            height: 28px;
+            background: black;
+            border: 2px solid #e60000;
+            border-radius: 18px;
+            overflow: hidden;
+            flex: 1; }
+            .page .container .contact-form__controls__progress__bar:before, .page .container .contact-form__controls__progress__bar:after, .page .container .contact-form__controls__progress__bar__content {
+              position: absolute;
+              display: block;
+              height: 38px;
+              margin-top: -7px;
+              border-radius: 35px; }
+            .page .container .contact-form__controls__progress__bar:before {
+              left: -2px;
+              width: 50%;
+              border-right: 4px solid red;
+              border-radius: 20px;
+              content: "";
+              z-index: 2; }
+            .page .container .contact-form__controls__progress__bar__content {
+              transition: 0.4s;
+              width: 100%;
+              z-index: 3; }
+              .page .container .contact-form__controls__progress__bar__content.progress-33 {
+                max-width: 33%;
+                background-image: linear-gradient(45deg, #b30000 9.7%, #1a1a1a 9.7%, #1a1a1a 19.4%, #b30000 19.4%, #b30000 29.1%, #1a1a1a 29.1%, #1a1a1a 38.8%, #b30000 38.8%, #b30000 48.5%, #1a1a1a 48.5%, #1a1a1a 58.2%, #b30000 58.2%, #b30000 67.9%, #1a1a1a 67.9%, #1a1a1a 77.6%, #b30000 77.6%, #b30000 87.3%, #1a1a1a 87.3%); }
+              .page .container .contact-form__controls__progress__bar__content.progress-50 {
+                max-width: 50%;
+                background-image: linear-gradient(45deg, #b30000 9.7%, #1a1a1a 9.7%, #1a1a1a 19.4%, #b30000 19.4%, #b30000 29.1%, #1a1a1a 29.1%, #1a1a1a 38.8%, #b30000 38.8%, #b30000 48.5%, #1a1a1a 48.5%, #1a1a1a 58.2%, #b30000 58.2%, #b30000 67.9%, #1a1a1a 67.9%, #1a1a1a 77.6%, #b30000 77.6%, #b30000 87.3%, #1a1a1a 87.3%); }
+              .page .container .contact-form__controls__progress__bar__content.progress-66 {
+                max-width: 66%;
+                background-image: linear-gradient(45deg, #b30000 9.7%, #1a1a1a 9.7%, #1a1a1a 19.4%, #b30000 19.4%, #b30000 29.1%, #1a1a1a 29.1%, #1a1a1a 38.8%, #b30000 38.8%, #b30000 48.5%, #1a1a1a 48.5%, #1a1a1a 58.2%, #b30000 58.2%, #b30000 67.9%, #1a1a1a 67.9%, #1a1a1a 77.6%, #b30000 77.6%, #b30000 87.3%, #1a1a1a 87.3%); }
+              .page .container .contact-form__controls__progress__bar__content.progress-100 {
+                max-width: 100%;
+                background-image: linear-gradient(45deg, #b30000 6.9285714286%, #1a1a1a 6.9285714286%, #1a1a1a 13.8571428571%, #b30000 13.8571428571%, #b30000 20.7857142857%, #1a1a1a 20.7857142857%, #1a1a1a 27.7142857143%, #b30000 27.7142857143%, #b30000 34.6428571429%, #1a1a1a 34.6428571429%, #1a1a1a 41.5714285714%, #b30000 41.5714285714%, #b30000 48.5%, #1a1a1a 48.5%, #1a1a1a 55.4285714286%, #b30000 55.4285714286%, #b30000 62.3571428571%, #1a1a1a 62.3571428571%, #1a1a1a 69.2857142857%, #b30000 69.2857142857%, #b30000 76.2142857143%, #1a1a1a 76.2142857143%, #1a1a1a 83.1428571429%, #b30000 83.1428571429%, #b30000 90.0714285714%, #1a1a1a 90.0714285714%); }
+        .page .container .contact-form__controls__buttons {
+          margin-left: auto; }
+          .page .container .contact-form__controls__buttons button, .page .container .contact-form__controls__buttons input {
+            font-size: 15px;
+            color: white;
+            background: black;
+            border: 2px solid #e60000;
+            border-radius: 5px;
+            padding: 8px 13px;
+            margin: 0 3px; }
+            .page .container .contact-form__controls__buttons button.hidden, .page .container .contact-form__controls__buttons input.hidden {
+              display: none; }
+            .page .container .contact-form__controls__buttons button:hover, .page .container .contact-form__controls__buttons input:hover {
+              color: white;
+              background: rgba(230, 0, 0, 0.9); }
+      .page .container .contact-form .email-step {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        background: black;
+        padding: 20px 40px; }
+        .page .container .contact-form .email-step:not(.active) {
+          z-index: -1; }
+        .page .container .contact-form .email-step__title {
+          position: relative;
+          top: 0;
+          left: 50%;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          color: white;
+          font-size: 14px;
+          transform: translateX(-50%);
+          text-align: center;
+          padding: 0 15px;
+          margin: 5px 0 15px; }
+          @media screen and (max-width: 1200px) {
+            .page .container .contact-form .email-step__title {
+              margin: 5px auto 15px;
+              max-width: 500px;
+              left: initial;
+              transform: translateX(0); } }
+          .page .container .contact-form .email-step__title p {
+            margin: 2px 0; }
+            .page .container .contact-form .email-step__title p:first-of-type {
+              margin-top: 7px; }
+            .page .container .contact-form .email-step__title p:last-of-type {
+              margin-bottom: 5px; }
+          .page .container .contact-form .email-step__title h2 {
+            font-size: 24px; }
+            @media screen and (max-height: 800px) {
+              .page .container .contact-form .email-step__title h2 {
+                font-size: 20px; } }
+            .page .container .contact-form .email-step__title h2 span {
+              color: red; }
+      .page .container .contact-form #step-email-details > div:not(:first-child) {
+        position: relative;
+        display: flex;
+        margin: 12px 0; }
+        @media screen and (max-width: 1200px) {
+          .page .container .contact-form #step-email-details > div:not(:first-child) {
+            margin: 12px auto; } }
+        @media screen and (max-width: 1200px) {
+          .page .container .contact-form #step-email-details > div:not(:first-child):not(.email-step__title) {
+            flex-direction: column;
+            max-width: 500px;
+            width: 100%; } }
+        .page .container .contact-form #step-email-details > div:not(:first-child):not(.email-step__title) .form-error {
+          position: absolute;
+          top: 50%;
+          right: 220px;
+          display: flex;
+          padding: 8px 12px;
+          color: white;
+          background: black;
+          border: 1px solid white;
+          transform: translateY(-50%);
+          font-size: 0.9em;
+          text-align: center; }
+          @media screen and (max-width: 1200px) {
+            .page .container .contact-form #step-email-details > div:not(:first-child):not(.email-step__title) .form-error {
+              top: 8px;
+              right: initial;
+              left: 14px; } }
+          .page .container .contact-form #step-email-details > div:not(:first-child):not(.email-step__title) .form-error.hidden {
+            display: none; }
+          .page .container .contact-form #step-email-details > div:not(:first-child):not(.email-step__title) .form-error i {
+            position: absolute;
+            top: 50%;
+            right: -16px;
+            transform: rotate(90deg) translateX(-75%);
+            font-size: 1.5em;
+            color: red; }
+            @media screen and (max-width: 1200px) {
+              .page .container .contact-form #step-email-details > div:not(:first-child):not(.email-step__title) .form-error i {
+                top: initial;
+                right: initial;
+                left: 10px;
+                bottom: 0;
+                transform: rotate(180deg) translateY(-50%); } }
+        .page .container .contact-form #step-email-details > div:not(:first-child):not(.email-step__title).error-box {
+          position: absolute;
+          display: flex;
+          top: 50%;
+          right: 250px;
+          border: 3px solid white;
+          background: black;
+          border-radius: 3px;
+          content: ""; }
+        .page .container .contact-form #step-email-details > div:not(:first-child):not(.email-step__title)#first-name-error {
+          content: "Empty name was given!"; }
+        .page .container .contact-form #step-email-details > div:not(:first-child) > label {
+          height: 40px;
+          line-height: 40px;
+          color: white;
+          font-size: 18px; }
+          @media screen and (max-width: 1200px) {
+            .page .container .contact-form #step-email-details > div:not(:first-child) > label {
+              height: 35px;
+              line-height: 35px;
+              margin-left: 15px;
+              font-size: 16px; } }
+        .page .container .contact-form #step-email-details > div:not(:first-child) > input {
+          margin-left: auto;
+          border: none;
+          color: white;
+          background: rgba(26, 26, 26, 0.4);
+          border-bottom: 2px solid red;
+          border-radius: 2px;
+          text-align: center;
+          padding: 5px 10px 8px; }
+          @media screen and (max-width: 1200px) {
+            .page .container .contact-form #step-email-details > div:not(:first-child) > input {
+              margin: 0;
+              border-top: 2px solid #e60000;
+              border-right: 2px solid #e60000;
+              border-left: 2px solid #e60000;
+              border-bottom: 2px solid red;
+              border-radius: 8px 8px 5px 5px; } }
+      .page .container .contact-form #step-email-title {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap; }
+        .page .container .contact-form #step-email-title > label {
+          position: relative;
+          display: flex;
+          height: 180px;
+          width: 180px;
+          color: black;
+          background: rgba(255, 255, 255, 0.85);
+          border: 1px solid red;
+          border-radius: 12px;
+          margin: 10px;
+          overflow: hidden; }
+          .page .container .contact-form #step-email-title > label > img {
+            height: auto;
+            max-width: 100%; }
+          .page .container .contact-form #step-email-title > label > input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0; }
+            .page .container .contact-form #step-email-title > label > input:checked ~ .checkmark {
+              background: #09aa09; }
+              .page .container .contact-form #step-email-title > label > input:checked ~ .checkmark > i {
+                top: 48%;
+                left: 48%; }
+                .page .container .contact-form #step-email-title > label > input:checked ~ .checkmark > i:before {
+                  content: "\f00c";
+                  color: white;
+                  -webkit-transform: rotate(-12deg);
+                  -ms-transform: rotate(-12deg);
+                  transform: rotate(-12deg); }
+          .page .container .contact-form #step-email-title > label > .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 35px;
+            width: 35px;
+            background: white;
+            border-radius: 0 0 50% 0; }
+            .page .container .contact-form #step-email-title > label > .checkmark > i {
+              position: absolute;
+              content: "";
+              left: 46%;
+              top: 50%;
+              margin: 0;
+              color: red;
+              transform: translate(-50%, -50%); }
+              .page .container .contact-form #step-email-title > label > .checkmark > i:before {
+                display: block;
+                content: "\f00d"; }
+            .page .container .contact-form #step-email-title > label > .checkmark:hover {
+              background: #d9d9d9; }
+      .page .container .contact-form #step-email-body {
+        position: relative; }
+        .page .container .contact-form #step-email-body > label {
+          display: flex;
+          width: 100%;
+          margin: 15px 0 30px 0;
+          overflow: hidden; }
+          @media screen and (max-width: 1200px) {
+            .page .container .contact-form #step-email-body > label {
+              padding: 0 15px 0 15px; } }
+          .page .container .contact-form #step-email-body > label > textarea {
+            min-height: 200px;
+            padding: 25px;
+            border-radius: 20px;
+            border: none;
+            resize: none;
+            font-size: 18px;
+            flex: 1; }
+        .page .container .contact-form #step-email-body .form-error {
+          position: absolute;
+          top: 90px;
+          right: 80px;
+          max-width: 250px;
+          padding: 25px 20px;
+          color: white;
+          background: black;
+          border-radius: 4px;
+          text-align: center; }
+          .page .container .contact-form #step-email-body .form-error.hidden {
+            display: none; }
+          .page .container .contact-form #step-email-body .form-error i {
+            position: absolute;
+            top: 50%;
+            left: -16px;
+            color: red;
+            transform: rotate(-90deg) translateX(75%);
+            font-size: 2.3em; }
+
+/* KEYFRAMES */
+@keyframes HideStep {
+  0% {
+    left: 0; }
+  100% {
+    left: -1000px; } }
+@keyframes ShowStep {
+  0% {
+    left: -1000px; }
+  100% {
+    left: 0; } }
+
+/*# sourceMappingURL=contact.css.map */

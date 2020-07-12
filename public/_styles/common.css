@@ -1,0 +1,135 @@
+/* GLOBAL NEXT.JS RESET */
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div,
+div#__next > div > div {
+  height: 100%; }
+
+#__next-prerender-indicator {
+  display: none; }
+
+/* GLOBAL CSS RESET */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  padding: 0;
+  margin: 0; }
+
+fieldset, img {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ol, ul {
+  list-style: none; }
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-weight: normal;
+  font-style: normal; }
+
+caption, th {
+  text-align: left; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 100%; }
+
+q:before, q:after {
+  content: ''; }
+
+abbr, acronym {
+  border: 0; }
+
+div,
+button,
+form,
+fieldset {
+  box-sizing: border-box; }
+
+button,
+input {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  overflow: visible; }
+
+button {
+  text-transform: none;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer; }
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/*/
+  **
+  ***
+  *****
+  ******
+  *****
+  ****
+  ***
+/*/
+/* VARIABLES */
+/* ELEMENTS */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+body {
+  position: relative; }
+
+i {
+  margin: 0 8px; }
+
+p {
+  margin-bottom: 20px; }
+
+/* CLASSES */
+.page:not(.extender), .page__shader {
+  height: 100%;
+  width: 100%; }
+
+.page {
+  position: relative;
+  background: black; }
+  .page.extender {
+    overflow: hidden; }
+  .page__title {
+    max-width: 440px;
+    min-width: 260px;
+    padding: 80px 90px 100px;
+    margin: 0 auto;
+    text-align: center; }
+    @media screen and (max-width: 600px) {
+      .page__title {
+        padding: 80px 60px 100px; } }
+    @media screen and (max-width: 460px) {
+      .page__title {
+        padding: 80px 30px 100px; } }
+    .page__title img {
+      height: auto;
+      max-width: 100%; }
+  .page .page__shader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.35); }
+
+/*# sourceMappingURL=common.css.map */
