@@ -111,20 +111,31 @@ class Main {
         /**
          * Create HTTPS server
          * Environment depends on command line variable
+         * If "all" variable given, create both environment
          */
-        if (this.environment === "dev") {
 
-            http.createServer(this.app).listen(this.config.ports.ssl_dev, () => {
-                console.log(`Harriot Software is listening on port ${this.config.ports.ssl_dev}, Environment: ${this.environment}`);
+        const ports = this.config.ports;
+
+        if (this.environment === "all") {
+
+            http.createServer(this.app).listen(ports.ssl, () => {
+                console.log(`Harriot Software is listening on port ${ports.ssl}, Environment: ${this.environment}`);
             });
 
-        } else if (this.environment === "prod") {
+            http.createServer(this.app).listen(ports.ssl_dev, () => {
+                console.log(`Harriot Software is listening on port ${ports.ssl_dev}, Environment: ${this.environment}`);
+            });
 
-            http.createServer(this.app).listen(this.config.ports.ssl, () => {
-                console.log(`Harriot Software is listening on port ${this.config.ports.ssl}, Environment: ${this.environment}`);
+        } else {
+
+            const listeningPort = this.environment === "prod" ? ports.ssl : ports.ssl_dev;
+
+            http.createServer(this.app).listen(listeningPort, () => {
+                console.log(`Harriot Software is listening on port ${listeningPort}, Environment: ${this.environment}`);
             });
 
         }
+
     }
 }
 

@@ -11,6 +11,8 @@ const proxy = require('redbird')({
         https2: true
     },
 
+    bunyan: false
+
 });
 
 proxy.register("www.harriot.fi", "http://localhost:8082", {
@@ -31,12 +33,13 @@ proxy.register("dev.harriot.fi", "http://localhost:8083", {
 
 });
 
+
 /**
  * Get environment from command line
  * @type {*[]}
  */
 const args = process.argv.slice(2);
-if (!args[0]) { throw new Error("Command line argument missing: dev / prod environment"); }
+if (!args[0]) { throw new Error("Command line argument missing: | dev / prod / all | environment"); }
 
 const environment = args[0];
 

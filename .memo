@@ -1,6 +1,15 @@
-To build PROD environment:
-> npm run-script build
-> node app.js prod
+Builds:
+- node app.js dev
+    - Listens to port 8083 in DEV environment
+- npm run-script build && node app.js prod
+    - Listens to port 8082 in PROD environment
+- npm run-script build && node app.js all
+    - Listens to both 8083 in DEV and 8082 in PROD
+
+Firewall commands:
+- firewall-cmd --permanent --add-port=xxxx/tcp
+- firewall-cmd --reload
+- firewall-cmd --list-ports
 
 TODO:
 - Validator class
