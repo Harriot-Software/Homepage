@@ -1,6 +1,6 @@
 To build PROD environment:
 > npm run-script build
-> java NEXT_app.jsp.js prod
+> node app.js prod
 
 TODO:
 - Validator class

@@ -13,7 +13,7 @@ const proxy = require('redbird')({
 
 });
 
-proxy.register("www.harriot.fi", "http://localhost:8080", {
+proxy.register("www.harriot.fi", "http://localhost:8082", {
 
     ssl: {
         key: "/etc/letsencrypt/live/www.harriot.fi/privkey.pem",
@@ -22,7 +22,7 @@ proxy.register("www.harriot.fi", "http://localhost:8080", {
 
 });
 
-proxy.register("dev.harriot.fi", "http://localhost:8081", {
+proxy.register("dev.harriot.fi", "http://localhost:8083", {
 
     ssl: {
         key: "/etc/letsencrypt/live/dev.harriot.fi/privkey.pem",
