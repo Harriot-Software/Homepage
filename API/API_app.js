@@ -22,23 +22,18 @@ class Main {
 
   Init() {
     this.CreateHTTPS();
-
     this.SetRoutes();
   }
 
   CreateHTTPS() {
 
-    if (this.environment === "dev") {
+    const ports = this.config.ports;
 
-      http.createServer(this.app).listen(this.config.ports.ssl_dev, () => {
-        console.log(`API listening to SSL traffic on port ${this.config.ports.ssl_dev}, Enviroment: ${this.environment}`);
-      });
+    const listeningPort = this.environment === "dev" ? ports.ssl_dev : ports.ssl;
 
-    } else {
-      http.createServer(this.app).listen(this.config.ports.ssl, () => {
-        console.log(`API listening to SSL traffic on port ${this.config.ports.ssl}, Enviroment: ${this.environment}`);
-      });
-    }
+    http.createServer(this.app).listen(listeningPort, () => {
+      console.log(`API listening to SSL traffic on port ${this.config.ports.ssl_dev}, Environment: ${this.environment}`);
+    });
 
   }
 
