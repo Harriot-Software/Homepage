@@ -2,13 +2,14 @@
   "name": "homepage",
   "version": "1.0.0",
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "mailgun-js": "^0.22.0",
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "express": "^4.17.1",
+    "mailgun-js": "^0.22.0",
     "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "redbird": "^0.10.0"
   }
 }

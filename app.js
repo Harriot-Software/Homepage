@@ -2,7 +2,6 @@
  * Port forwarding & main application
  */
 
-const API_APP = require('./API/API_app').Main;
 const NEXT_APP = require('./NEXT_app').Main;
 
 const proxy = require('redbird')({
@@ -41,5 +40,4 @@ if (!args[0]) { throw new Error("Command line argument missing: dev / prod envir
 
 const environment = args[0];
 
-new API_APP(environment).Init();
 new NEXT_APP(environment).Init();

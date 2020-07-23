@@ -6,7 +6,7 @@ export default function Navigation() {
             <div className="navigation__links-left">
                 <a className="navigation__brand active"
                    title="Home page link"
-                   href=""
+                   href="/"
                    target="_self">
                     <img className="navigation__brand__title" src="_img/Harriot_logo_small.png" alt="HOME" />
                 </a>
