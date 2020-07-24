@@ -40,14 +40,14 @@ class Mailer {
         this.mailgun = new Mailgun({ apiKey: this.config.key, domain: this.config.domain });
 
         const html = "Message from <b>'"+ this.params.firstName + " " + this.params.lastName + "'</b> "
-            + (this.params.companyName !== "" ? "from the company <b>'" + this.params.companyName + "'</b> " : "")
-            + "with the email address of " + this.params.emailAddress + ":<br /><br /><br />"
+            + (this.params.companyName !== "" ? "from <b>'" + this.params.companyName + "'</b> " : "")
+            + ", email address: '" + this.params.emailAddress + "':<br /><br /><br />"
             + this.params.emailBody;
 
         this.data = {
-            from: 'Lauri Pakkanen <lauri.pakkanen@harriot.fi>',
-            to: 'Kuikka87@gmail.com',
-            subject: 'Business inquiry from website',
+            from: 'info <info@harriot.fi>',
+            to: 'lauri-mikael.pakkanen@harriot.fi',
+            subject: 'Message from Harriot.fi contact form',
             html: html
         };
     }
