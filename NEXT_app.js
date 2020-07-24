@@ -7,13 +7,13 @@ const compression = require('compression');
 
 const http = require('http');
 
-const Mailer = require('./private/_js/Mailer.js').Mailer;
+const Mailer = require('./private/class/Mailer.js');
 
 class Main {
 
     constructor(environment) {
 
-        this.config = require('./private/_js/config.js');
+        this.config = require('./private/files/config.js');
 
         /**
          * Create HTTPS app for SSL port
@@ -70,20 +70,15 @@ class Main {
 
             const mailer = new Mailer(config, params);
 
-            try {
+            mailer.Sanitize().then(() => {
 
                 mailer.Verify();
                 mailer.Init();
                 mailer.Send();
-
                 return res.send({ status: "success" });
 
-            } catch (error) {
-                return res.send({
-                    status: "error",
-                    error: error
-                });
-            }
+            }).catch((error) => { return res.send({ status: "error", error: error }); });
+
         });
 
         /**

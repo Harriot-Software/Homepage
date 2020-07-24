@@ -12,4 +12,4 @@ Firewall commands:
 - firewall-cmd --list-ports
 
 TODO:
-- Validator class
+- Sanitizer class

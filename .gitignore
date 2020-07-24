@@ -1,5 +1,4 @@
 .idea/
 node_modules/
 package-lock.json
-private/_js/config.js
-API/private/js/config.js
+private/files/config.js

@@ -1,4 +1,7 @@
+const Validator = require('../../private/class/Validator');
+
 class PageHandler {
+
     constructor(){
 
         this.form = document.getElementById("contact-form");
@@ -212,11 +215,6 @@ class PageHandler {
         /* Hide current page, show next page */
         this.form_next.addEventListener("click", () => {
 
-            function validateEmail(email) {
-                let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(String(email).toLowerCase());
-            }
-
             /**
              * Hide error fields
              */
@@ -230,27 +228,19 @@ class PageHandler {
 
             this.email_details_fields.forEach((field) => {
 
-                /**
-                 * Field has invalid values; show error
-                 */
-                if (field.value === "" || field.value === null || field.value === undefined) {
+                if (field.id === "email-address") {
 
-                    // TODO: Add validation
+                    if (!field.value) {
 
-                    let error_field = document.getElementById(field.id + "-error");
+                        let error_field = document.getElementById(field.id + "-error");
 
-                    if (error_field.classList.contains("hidden")) {
-                        error_field.classList.remove("hidden");
-                    }
+                        if (error_field.classList.contains("hidden")) {
+                            error_field.classList.remove("hidden");
+                        }
 
-                    valid_values = false;
+                        valid_values = false;
 
-                } else if (field.id === "email-address") {
-
-                    /**
-                     * Field has invalid values; show error
-                     */
-                    if (!validateEmail(field.value)) {
+                    } else if (!Validator.ValidateEmailAddress(field.value)) {
 
                         let error_field = document.getElementById(field.id + "-error-invalid");
 
@@ -261,6 +251,24 @@ class PageHandler {
                         valid_values = false;
 
                     }
+
+                } else {
+
+                    /**
+                     * Generic field has invalid values; show error
+                     */
+                    if (!Validator.ValidateGenericField(field.value)) {
+
+                        let error_field = document.getElementById(field.id + "-error");
+
+                        if (error_field.classList.contains("hidden")) {
+                            error_field.classList.remove("hidden");
+                        }
+
+                        valid_values = false;
+
+                    }
+
                 }
 
             });
@@ -323,15 +331,6 @@ class PageHandler {
 
         this.form_send.addEventListener("click", (event) => {
 
-            function validateBody(body) {
-
-                // TODO: validation
-                return true;
-
-                const regex = /g/;
-                return regex.test(String(body).toLowerCase());
-            }
-
             /**
              * Hide body error fields
              */
@@ -343,33 +342,15 @@ class PageHandler {
 
             });
 
-            /**
-             * Email body is invalid
-             */
-            if (this.email_body_field.value === "" ||
-                this.email_body_field.value === null ||
-                this.email_body_field.value === undefined) {
+            if (!Validator.ValidateEmailBody(this.email_body_field.value)) {
 
-                if (this.email_body_error_fields[0].classList.contains("hidden")) {
-                    this.email_body_error_fields[0].classList.remove("hidden");
+                if (this.email_body_error_fields[1].classList.contains("hidden")) {
+                    this.email_body_error_fields[1].classList.remove("hidden");
                 }
 
                 return event.preventDefault();
-
-            } else {
-
-                /**
-                 * Email body is invalid
-                 */
-                if (!validateBody(this.email_body_field.value)) {
-
-                    if (this.email_body_error_fields[1].classList.contains("hidden")) {
-                        this.email_body_error_fields[1].classList.remove("hidden");
-                    }
-
-                    return event.preventDefault();
-                }
             }
+
         });
 
         /**
