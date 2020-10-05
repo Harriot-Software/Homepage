@@ -106,11 +106,12 @@ class About extends React.Component {
                             <div className="section__content">
                                 <p>
                                     <span>Harriot Software</span> is a software development company based in Finland.
-                                    We specialize in high quality custom websites.
+                                    We offer website packages for various purposes, ranging from eCommerce stores
+                                    to blogs, portfolios & much more.
                                 </p>
                                 <p>
-                                    Our <span>goal</span> is to create a strong online presence for <span>your company</span>.
-                                    We'll work together with <span>you</span> to create exactly what your company needs.
+                                    We specialize in customizable, high quality websites that convert page views
+                                    to paying customers.
                                 </p>
                             </div>
 
