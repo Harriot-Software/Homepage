@@ -126,32 +126,30 @@ class About extends React.Component {
 
                             <div className="section__content">
 
-                                <p>Harriot offers you:</p>
+                                <p>Harriot offers:</p>
 
                                 <ul className="section__content__list fa-ul">
                                     <li>
                                         <span className="fa-li">
                                             <i className="fas fa-angle-right fa-lg"/>
                                         </span>
-                                        Website design, development, deployment & maintenance
+                                        Ready-to-use, scalable eCommerce platform package for customers
+                                        with high website traffic volume & specialized requirements
                                     </li>
                                     <li>
                                         <span className="fa-li">
                                             <i className="fas fa-angle-right fa-lg"/>
                                         </span>
-                                        Back-end software development
+                                        Ready-to-use, simple WordPress eCommerce platform package with
+                                        customized appearance for customers with low to medium website
+                                        traffic volume
                                     </li>
                                     <li>
                                         <span className="fa-li">
                                             <i className="fas fa-angle-right fa-lg"/>
                                         </span>
-                                        Website scraping software development
-                                    </li>
-                                    <li>
-                                        <span className="fa-li">
-                                            <i className="fas fa-angle-right fa-lg"/>
-                                        </span>
-                                        Bot software development
+                                        Landing pages, portfolios, galleries and other custom
+                                        website platforms & solutions
                                     </li>
                                 </ul>
 
